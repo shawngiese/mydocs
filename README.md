@@ -1,7 +1,7 @@
 docbook
 =======
 
-# Collection of docbook solutions
+# Some DocBook solutions
 
 There are two solutions here.  The first, uses AsciiDoc markup to create multiple text files that can be built into a book or website.  The second is a collection of DocBook customizations that I have found useful.
 
