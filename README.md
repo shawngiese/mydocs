@@ -1,9 +1,9 @@
 Some DocBook solutions
 =======
 
-There are two solutions here.  The first, uses AsciiDoc markup to create multiple text files that can be built into a book or website.  The second is a collection of DocBook customizations that I have found useful.
+There are two solutions here.  The first, uses AsciiDoc markup to create multiple text files that can be built into a book or website.  The second is a collection of DocBook customizations that I have found useful.  The folder structure is a possible metod of organizing your files, customize it as needed. 
 
-My wiki pages here give information on creating a DocBook toolchain to build documents but you can also use the software that comes with AsciiDoc or export your text from AsciiDoc to DocBook and then use your preferred DocBook tools to make the final document output.  
+My wiki pages give information on creating a DocBook toolchain to build documents but you can also use the software that comes with AsciiDoc or export your text from AsciiDoc to DocBook and then use your preferred DocBook tools to make the final document output.  
 
 # Why use a markup langauge?
 This enables you to use any text editor on any operating system to update and create documents.  You can even use a web browser to edit the files if those files are stored on a server like GitHub.  

@@ -1,0 +1,8 @@
+Readme DocBook stylesheets
+=======
+
+Download the latest DocBook XSL stylesheet files here:
+
+	http://sourceforge.net/projects/docbook/files/docbook-xsl/
+
+This example is using stylesheet version 1.77.1.
