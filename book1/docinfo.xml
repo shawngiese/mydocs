@@ -1,0 +1,103 @@
+<!--
+  book-docinfo.xml
+  Example DocBook document information file.
+-->
+
+<mediaobject>
+  <imageobject>
+    <imagedata align="center" depth="400" fileref="images/tiger.png"/>
+  </imageobject>
+</mediaobject>
+
+<subtitle>Subtitle of this book</subtitle>
+<productname>DocuMentor</productname>
+
+<authorgroup>
+  <author>
+    <honorific>Dr</honorific>
+    <firstname>Lois</firstname>
+    <surname>Common-Demoninator</surname>
+    <affiliation>
+      <shortaffil>Director, School of Coop. Writing.</shortaffil>
+      <jobtitle>Director of Cooperative Efforts</jobtitle>
+      <orgname>The School of Cooperative Writing</orgname>
+    </affiliation>
+  </author>
+
+  <author>
+    <honorific>Mr</honorific>
+    <firstname>Steven</firstname>
+    <surname>Norman</surname>
+    <othername role='mi'>T</othername>
+    <affiliation>
+      <shortaffil>ATI</shortaffil>
+      <jobtitle>Senior Application Analyst</jobtitle>
+      <orgname>Foobar, Inc.</orgname>
+      <orgdiv>Application Development</orgdiv>
+    </affiliation>
+  </author>
+
+  <editor>
+    <firstname>Peter</firstname>
+    <surname>Pan</surname>
+    <lineage>Sr.</lineage>
+    <othername>Spiderman</othername>
+    <authorblurb>
+      <para>
+      Peter's a super hero in his spare time.
+      </para>
+    </authorblurb>
+  </editor>
+</authorgroup>
+
+<copyright>
+  <year>2010-2012</year>
+  <holder>My Organization</holder>  
+</copyright>
+
+<releaseinfo/>
+
+<printhistory>
+  <para>
+  September, 1996    First Printing
+  </para>
+</printhistory>
+
+<productnumber>2012 A</productnumber>
+
+<corpname>TypeWriter LLC</corpname>
+
+<corpauthor/>
+
+<address>Switzerland, 
+<email>info@medocs.ch</email><othername><ulink url="http://www.medocs.ch/">
+http://www.medocs.ch/</ulink></othername></address>
+
+<legalnotice>
+  <synopsis>
+<textobject><textdata
+fileref="../common/legal.txt" />
+</textobject>
+</synopsis>
+</legalnotice>
+
+<revhistory>
+   <revision>
+    <revnumber>2.0</revnumber>
+    <date>February 2012</date>
+    <authorinitials>PP</authorinitials>
+    <revremark>Updates.</revremark>
+  </revision>
+  <revision>
+    <revnumber>1.1</revnumber>
+    <date>May 2009</date>
+    <authorinitials>PP</authorinitials>
+    <revremark>Updates.</revremark>
+  </revision>
+  <revision>
+    <revnumber>1.0</revnumber>
+    <date>October 2003</date>
+    <authorinitials>PP</authorinitials>
+    <revremark>First release.</revremark>
+  </revision>
+</revhistory>
