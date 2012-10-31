@@ -5,4 +5,4 @@ Download the latest AsciiDoc files here if it is not already installed elsewhere
 
 	http://www.methods.co.nz/asciidoc/INSTALL.html
 
-This example is using AsciiDoc version 8.6.8.
+This example is using AsciiDoc version 8.6.8.  The sample scripts assume that you have AsciiDoc installed into your system environment,
