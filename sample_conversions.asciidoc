@@ -3,7 +3,7 @@ Sample commands for AsciiDoc and DocBook
 Shawn Giese
 v1.0, October 2012
 
-AsciiDoc files in these examples use the file extensiuon .asciidoc to enable preview in github but you can use any extension that you prefer.  The components for this file structure must be downloaded separately if they are not installed in your operating system.
+AsciiDoc files in these examples use the file extension .asciidoc to enable preview in github but you can use any extension that you prefer.  The components for this file structure must be downloaded separately if they are not installed in your operating system.
 
 == Tools ==
 .Free tools, required
@@ -26,8 +26,8 @@ AsciiDoc supports some free tools for additional content creation:
 .Commercial tools, optional
 The following are some optional commercial tools:
 
-* XEP instead of Apache FOP - for more PDF options
-* XMLMind instead of Apache FOP - for more output options like web help
+* XEP instead of Apache FOP - for more PDF options and advanced DocBook editing
+* XMLMind XML editor instead of FOP - for output options like web help, Word, OpenOffice
 * Sublime Text 2 instead of a free text editor - for advanced editing
 
 == Sample AsciiDoc commands ==
