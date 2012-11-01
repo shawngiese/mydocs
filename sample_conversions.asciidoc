@@ -3,7 +3,7 @@ Sample commands for AsciiDoc and DocBook
 Shawn Giese
 v1.0, October 2012
 
-AsciiDoc files in these examples use the file extensiuon .asc but you can use any extension that you prefer.  The components for this file structure must be downloaded separately if they are not installed in your operating system.
+AsciiDoc files in these examples use the file extensiuon .asciidoc to enable preview in github but you can use any extension that you prefer.  The components for this file structure must be downloaded separately if they are not installed in your operating system.
 
 == Tools ==
 .Free tools, required
@@ -32,47 +32,47 @@ The following are some optional commercial tools:
 
 == Sample AsciiDoc commands ==
 Convert AsciiDoc to Slidy presentation
---
+----
 asciidoc --backend slidy book1/book_simple.asc 
---
+----
 
 Convert AsciiDoc to HTML5
---
+----
 asciidoc --backend html5 book1/book_simple.asc 
---
+----
 
 Install qrcode plugin
---
+----
 asciidoc --backend install qrcode-filter.zip 
---
+----
 
 Convert AsciiDoc to DocBook file
---
+----
 asciidoc --backend docbook book1/book_simple.asc 
---
+----
 
 Convert AsciiDoc to DocBook file and include docinfo.xml file
---
+----
 asciidoc -a docinfo1 --backend docbook book1/book_simple.asc
---
+----
 
 == Sample XSL conversions ==
 Uses xsltproc and current XSL stylesheets to convert Docbook to FO.
 
 Convert DocBook file to FO file
---
+----
 xsltproc.exe docbook-xsl-1.77.1/fo/docbook.xsl .\book1\book_simple.xml > \book1\output\book.fo
---
+----
 
 Rebuild custom title page layout from titlepage spec file
---
+----
 xsltproc -o myTitlePage.xsl docbook-xsl-1.77.1\template\titlepage.xsl myTitlepageSpecFilexml
---
+----
 
 Convert DocBook file to FO file using a custom stylesheet
---
+----
 xsltproc.exe .\myCustomDocbook\myPDFstyles.xsl .\book1\book_simple.xml > \book1\output\book.fo
---
+----
 
 .Additional information
 The titlepage spec file should compile with any current XSL stylesheets for DocBook, however, I did not succeed with the 1.77.1 version and had to download the latest files from from http://50.56.245.89/xsl/template/ to correctly compile my custom titlepage.
@@ -83,14 +83,14 @@ Use of the titlepage spec file is discussed here https://lists.oasis-open.org/ar
 Uses Apache FOP to create PDF from FO file.
 
 Convert FO file to PDF file
---
+----
 fop.bat .\book.fo .\book.pdf 
---
+----
 
 Convert FO file to PDF file and use custom FOP configuration
---
+----
 fop.bat -c .\myFOPconf.xml .\book.fo .\book.pdf 
---
+----
 
 == Sample batch files for Windows ==
 Although these examples are for Windows, similar scripts can be written for different operating systems. Batch files (or scripts) can be useful to integrate into your text editor to build previews of your documentation or to use with a continuous integration server to automate your workflow.  
