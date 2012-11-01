@@ -3,10 +3,13 @@ Some DocBook solutions
 
 Two documentation solutions are presented here. The first, uses AsciiDoc markup to create multiple text files that can be built into a book or website. The second is a collection of DocBook customizations that I have found useful. The folder structure is a possible method of organizing your files, customize it as needed. 
 
-My GitHub wiki give information on creating a DocBook toolchain to build documents but you can also use the software that comes with AsciiDoc or export your text from AsciiDoc to DocBook and then use your preferred DocBook tools to make the final document output.  
+Information about creating a free DocBook toolchain is available in the wiki of this project. The toolchain enables you to build documents from DocBook files. You can also use the software that comes with AsciiDoc or export your text from AsciiDoc to DocBook and then use your preferred DocBook tools to make the final document output.  
 
 == Why use a markup langauge?
-This enables you to use any text editor on any operating system to update and create documents. You can even use a web browser to edit the files if those files are stored on a server like GitHub.  
+A markup language creates readable text files and avoids the complexity of learning DocBook XML tags. This enables you to use any text editor on any operating system to update and create documents. You can even use a web browser to edit the files if those files are stored on a server like GitHub.  
+
+== What do I loose using a markup language?
+Documents cannot be validated before you try to build a document and you do not have access to all of the DocBook tags.  Both of these issues can be resolved to some extent. You can attempt building end documents at any time to check for errors. If you really need all of the structure of DocBook tags then you will need your authors trained in writing DocBook, they will typically need XML writing software. If you need to separate content for different output, you can do that with conditional markup in AsciiDoc. So, there are workarounds many issues and I think that in many cases the use of markup text will prove valuable.
 
 == Why use AsciiDoc?
 There are many other markup languages that allow users to edit and format files but AsciiDoc allows you to link multiple text files (such as chapters or sections) together when you export, and export using the DocBook format. You can also export text to HTML slideshows, HTML websites and documents in ePub and PDF formats. Using the DocBook files enables automatic indexes, table of contents, and exporting to custom PDFs and webhelp depending on your DocBook tools.  AsciiDoc is free so any user can build final documents.
