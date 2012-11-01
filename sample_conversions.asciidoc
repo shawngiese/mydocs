@@ -142,6 +142,7 @@ Here is a sample document file structure for use with Windows. Tools such as asc
 			docinfo.xml
 			chap1.asciidoc
 			chap2.asciidoc
+			chap3.asciidoc
 			glossary.asciidoc
 			/images
 			/output
@@ -161,3 +162,4 @@ Here is a sample document file structure for use with Windows. Tools such as asc
 			myTitlePage.xsl
 			myTitlepageSpecFile.xml
 
+This is just one example. You can also store chapters or sections into subject or product folders and then keep the book files separate.
