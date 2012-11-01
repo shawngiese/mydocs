@@ -28,7 +28,7 @@ The following are some optional commercial tools:
 
 * XEP instead of Apache FOP - for more PDF options and advanced DocBook editing
 * XMLMind XML editor instead of FOP - for output options like web help, Word, OpenOffice
-* Sublime Text 2 instead of a free text editor - for advanced editing
+* Sublime Text 2 instead of a free text editor - for advanced text editing
 
 == Sample AsciiDoc commands ==
 Convert AsciiDoc to Slidy presentation
@@ -57,7 +57,7 @@ asciidoc -a docinfo1 --backend docbook book1/book_simple.asc
 ----
 
 == Sample XSL conversions ==
-Uses xsltproc and current XSL stylesheets to convert Docbook to FO.
+Uses xsltproc and current XSL stylesheets to convert Docbook to FO. You must have already converted your document to a DocBook file with AsciiDoc.
 
 Convert DocBook file to FO file
 ----
