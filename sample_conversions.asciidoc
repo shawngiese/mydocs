@@ -9,10 +9,11 @@ AsciiDoc files in these examples use the file extension .asciidoc to enable prev
 .Free tools, required
 The following free tools can create HTML and PDF output:
 
-* Apache FOP
 * AsciiDoc 
 * DocBook XSL stylesheets
-* Python 2.5 or later
+* Apache FOP
+* Python 2.5 or later (for AsciiDoc)
+* Java (for Apache FOP)
 * Text editor like nano, TextWrangler or VIM
 * The xsltproc tool
 
@@ -33,12 +34,12 @@ The following are some optional commercial tools:
 == Sample AsciiDoc commands ==
 Convert AsciiDoc to Slidy presentation
 ----
-asciidoc --backend slidy book1/book_simple.asc 
+asciidoc --backend slidy book1/book_simple.asciidoc 
 ----
 
 Convert AsciiDoc to HTML5
 ----
-asciidoc --backend html5 book1/book_simple.asc 
+asciidoc --backend html5 book1/book_simple.asciidoc 
 ----
 
 Install qrcode plugin
@@ -48,12 +49,17 @@ asciidoc --backend install qrcode-filter.zip
 
 Convert AsciiDoc to DocBook file
 ----
-asciidoc --backend docbook book1/book_simple.asc 
+asciidoc --backend docbook book1/book_simple.asciidoc 
 ----
 
 Convert AsciiDoc to DocBook file and include docinfo.xml file
 ----
-asciidoc -a docinfo1 --backend docbook book1/book_simple.asc
+asciidoc -a docinfo1 --backend docbook book1/book_simple.asciidoc
+----
+
+Running AsciiDoc on Micriosoft Windows
+----
+python c:\mydocs\asciidoc-8.6.8\asciidoc.py -a docinfo1 -b docbook book1\book_simple.asciidoc
 ----
 
 == Sample XSL conversions ==
@@ -66,7 +72,7 @@ xsltproc.exe docbook-xsl-1.77.1/fo/docbook.xsl .\book1\book_simple.xml > \book1\
 
 Rebuild custom title page layout from titlepage spec file
 ----
-xsltproc -o myTitlePage.xsl docbook-xsl-1.77.1\template\titlepage.xsl myTitlepageSpecFilexml
+xsltproc.exe -o myTitlePage.xsl docbook-xsl-1.77.1\template\titlepage.xsl myTitlepageSpecFilexml
 ----
 
 Convert DocBook file to FO file using a custom stylesheet
@@ -102,7 +108,7 @@ For example, you can add custom build commands in the Sublime Text editor
 REM Batch file to create PDF from XML DocBook files
 REM
 REM build docbook XML file from AsciiDoc book
-asciidoc -a docinfo1 -b docbook .\book1\book_simple.asc
+asciidoc -a docinfo1 -b docbook .\book1\book_simple.asciidoc
 
 REM create a FO file 
 xsltproc.exe docbook-xsl-1.77.1/fo/docbook.xsl .\book1\book_simple.xml > .\book1\output\book.fo
@@ -116,7 +122,7 @@ fop-1.1\fop.bat -c .\myCustomPDF\myFOPconf.xml .\book1\output\book.fo .\book1\ou
 REM Batch file to create PDF from XML DocBook files
 REM
 REM build docbook XML file from AsciiDoc book
-asciidoc -a docinfo1 -b docbook book1\book_simple.asc
+asciidoc -a docinfo1 -b docbook book1\book_simple.asciidoc
 
 REM create a FO file using a custom stylesheet
 xsltproc.exe .\myCustomPDF\myPDFstyles.xsl .\book1\book_simple.xml > .\book1\output\book.fo
@@ -129,13 +135,14 @@ fop-1.1\fop.bat -c .\myCustomPDF\myFOPconf.xml .\book.fo .\book.pdf
 Here is a sample document file structure for use with Windows. Tools such as asciidoc or xsltproc install to different folders in MacOSX or Linux.
 
 	/mydocs
+		xsltproc.exe
 		/asciidoc-8.6.8
 		/book1
-			bookname.asc
+			bookname.asciidoc
 			docinfo.xml
-			chap1.asc
-			chap2.asc
-			glossary.asc
+			chap1.asciidoc
+			chap2.asciidoc
+			glossary.asciidoc
 			/images
 			/output
 		/book2
@@ -144,6 +151,7 @@ Here is a sample document file structure for use with Windows. Tools such as asc
 			legal.txt
 			/images
 			/appendix
+			MigrationNotes.asciidoc
 		/docbook-xsl-1.77.1
 		/fop-1.1
 		/myCustomHTML

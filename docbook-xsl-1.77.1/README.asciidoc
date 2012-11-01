@@ -1,5 +1,5 @@
 Readme DocBook stylesheets
-=======
+==========================
 
 Download the latest DocBook XSL stylesheet files here:
 

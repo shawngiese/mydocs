@@ -74,11 +74,11 @@
 http://www.medocs.ch/</ulink></othername></address>
 
 <legalnotice>
-  <synopsis>
+  <literallayout>
 <textobject><textdata
 fileref="../common/legal/legal.txt" />
 </textobject>
-</synopsis>
+</literallayout>
 </legalnotice>
 
 <revhistory>

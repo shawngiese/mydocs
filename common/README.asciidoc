@@ -1,0 +1,4 @@
+Readme common
+=============
+
+The files in this folder are meant to be used in more than one book.  Keeping such material in a single location helps to maintain these files.  For example, legal text may be the same across all books.  It is easier to maintain a single file for this text instead of updating a separate legal text file for each book.  
