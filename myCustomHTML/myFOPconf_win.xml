@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<fop version="1.0">
+
+<!-- removes font errors for Symbol and ZapfDingbats,normal,700 since they do not exist -->
+<renderers>
+    <renderer mime="application/pdf">
+    <fonts>
+		<font kerning="yes" embed-url="file:///C:/windows/fonts/symbol.ttf">
+		 <font-triplet name="Symbol" style="normal" weight="400"/>
+		 <font-triplet name="Symbol" style="italic" weight="400"/>
+		 <font-triplet name="Symbol" style="normal" weight="700"/>
+		 <font-triplet name="Symbol" style="italic" weight="700"/>
+		</font>
+		
+		<font kerning="yes" embed-url="file:///C:/windows/fonts/symbol.ttf">
+		 <font-triplet name="ZapfDingbats" style="normal" weight="400"/>
+		 <font-triplet name="ZapfDingbats" style="italic" weight="400"/>
+		 <font-triplet name="ZapfDingbats" style="normal" weight="700"/>
+		 <font-triplet name="ZapfDingbats" style="italic" weight="700"/>
+		</font>
+    </fonts>
+    </renderer>
+</renderers>
+</fop>

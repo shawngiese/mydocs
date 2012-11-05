@@ -93,7 +93,7 @@ Convert FO file to PDF file
 fop.bat .\book.fo .\book.pdf 
 ----
 
-Convert FO file to PDF file and use custom FOP configuration
+Convert FO file to PDF file and use custom FOP configuration		
 ----
 fop.bat -c .\myFOPconf.xml .\book.fo .\book.pdf 
 ----
