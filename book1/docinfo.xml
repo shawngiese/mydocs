@@ -1,4 +1,4 @@
-<!--
+  <!--
   book-docinfo.xml
   Example DocBook document information file.
 -->
@@ -75,10 +75,8 @@ http://www.medocs.ch/</ulink></othername></address>
 
 <legalnotice>
   <literallayout>
-<textobject><textdata
-fileref="../common/legal/legal.txt" />
-</textobject>
-</literallayout>
+    <xi:include href="../common/legal.txt" parse="text" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  </literallayout>
 </legalnotice>
 
 <revhistory>

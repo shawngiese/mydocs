@@ -80,6 +80,11 @@ Convert DocBook file to FO file using a custom stylesheet
 xsltproc.exe .\myCustomDocbook\myPDFstyles.xsl .\book1\book_simple.xml > \book1\output\book.fo
 ----
 
+Convert DocBook file to FO file using a custom stylesheet an use xincludes (such as including legal text from a text file into the final output)
+----
+xsltproc.exe --xinclude .\myCustomDocbook\myPDFstyles.xsl .\book1\book_simple.xml > \book1\output\book.fo
+----
+
 .Additional information
 The titlepage spec file should compile with any current XSL stylesheets for DocBook, however, I did not succeed with the 1.77.1 version and had to download the latest files from from http://50.56.245.89/xsl/template/ to correctly compile my custom titlepage.
 
@@ -104,6 +109,8 @@ Although these examples are for Windows, similar scripts can be written for diff
 For example, you can add custom build commands in the Sublime Text editor 
 
 .Sample windows batch file
+The custom FOP configuration file is for correctly associating fonts used in the PDF output.  This is not necessary when running FOP on MacOSX.  When running the same scripts in MacOSX, remove "-c .\myCustomPDF\myFOPconf.xml".
+
 --------------------------------------
 REM Batch file to create PDF from XML DocBook files
 REM
@@ -111,7 +118,7 @@ REM build docbook XML file from AsciiDoc book
 asciidoc -a docinfo1 -b docbook .\book1\book_simple.asciidoc
 
 REM create a FO file 
-xsltproc.exe docbook-xsl-1.77.1/fo/docbook.xsl .\book1\book_simple.xml > .\book1\output\book.fo
+xsltproc.exe --xinclude docbook-xsl-1.77.1/fo/docbook.xsl .\book1\book_simple.xml > .\book1\output\book.fo
 
 REM create a PDF file 
 fop-1.1\fop.bat -c .\myCustomPDF\myFOPconf.xml .\book1\output\book.fo .\book1\output\book.pdf 
