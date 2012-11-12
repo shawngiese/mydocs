@@ -12,9 +12,7 @@ include::chapter1.asc[tabsize=4]
 
 include::chapter2.asc[]
 
-include::chapter3.asc[]
-
-include::../common/appendix/MigrationNotes.asc[]
+include::../../common/appendix/MigrationNotes.asc[]
 
 include::glossary.asc[]
 

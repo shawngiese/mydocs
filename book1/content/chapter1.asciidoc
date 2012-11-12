@@ -1,4 +1,4 @@
-$[[intro_chapter]]
+[[intro_chapter]]
 The First Chapter
 =================
 
@@ -10,7 +10,7 @@ Information about your visit can be found <<visit,here>>.
 indexterm:[Tigers,Big cats]
 
 .Tiger block image
-image::images/tiger.png[Tiger image]
+image::../images/tiger.png[Tiger image]
 
 NOTE: This is something important
 
@@ -30,8 +30,11 @@ int main() {
 }
 --------------------------------------
 
-=== 3rd level down ===
+== Section 1 ==
 Something belongs here.
 
-==== 4th level down ====
+=== Section 2 ===
+Something belongs here.
+
+==== Section 3 ====
 Something belongs here.

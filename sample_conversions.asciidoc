@@ -34,32 +34,32 @@ The following are some optional commercial tools:
 == Sample AsciiDoc commands ==
 Convert AsciiDoc to Slidy presentation
 ----
-asciidoc --backend slidy book1/book_simple.asciidoc 
+python asciidoc-8.6.8\asciidoc.py --backend slidy book1/book_simple.asciidoc 
 ----
 
 Convert AsciiDoc to HTML5
 ----
-asciidoc --backend html5 book1/book_simple.asciidoc 
+python asciidoc-8.6.8\asciidoc.py --backend html5 book1/book_simple.asciidoc 
 ----
 
 Install qrcode plugin
 ----
-asciidoc --backend install qrcode-filter.zip 
+python asciidoc-8.6.8\asciidoc.py --backend install qrcode-filter.zip 
 ----
 
 Convert AsciiDoc to DocBook file
 ----
-asciidoc --backend docbook book1/book_simple.asciidoc 
+python asciidoc-8.6.8\asciidoc.py --backend docbook book1/content/book_simple.asciidoc 
 ----
 
 Convert AsciiDoc to DocBook file and include docinfo.xml file
 ----
-asciidoc -a docinfo1 --backend docbook book1/book_simple.asciidoc
+python asciidoc-8.6.8\asciidoc.py -a docinfo1 --backend docbook book1/content/book_simple.asciidoc
 ----
 
-Running AsciiDoc on Micriosoft Windows
+Running AsciiDoc on Microsoft Windows
 ----
-python c:\mydocs\asciidoc-8.6.8\asciidoc.py -a docinfo1 -b docbook book1\book_simple.asciidoc
+python c:\mydocs\asciidoc-8.6.8\asciidoc.py -a docinfo1 -b docbook book1\content\book_simple.asciidoc
 ----
 
 == Sample XSL conversions ==
@@ -67,22 +67,22 @@ Uses xsltproc and current XSL stylesheets to convert Docbook to FO. You must hav
 
 Convert DocBook file to FO file
 ----
-xsltproc.exe docbook-xsl-1.77.1/fo/docbook.xsl .\book1\book_simple.xml > \book1\output\book.fo
+xsltproc.exe docbook-xsl-1.77.1/fo/docbook.xsl .\book1\content\book_simple.xml > \book1\output\book.fo
 ----
 
 Rebuild custom title page layout from titlepage spec file
 ----
-xsltproc.exe -o myTitlePage.xsl docbook-xsl-1.77.1\template\titlepage.xsl myTitlepageSpecFilexml
+xsltproc.exe -o myCustomPDF\myTitlePage.xsl docbook-xsl-1.77.1\template\titlepage.xsl myCustomPDF\myTitlepageSpecFile.xml
 ----
 
 Convert DocBook file to FO file using a custom stylesheet
 ----
-xsltproc.exe .\myCustomDocbook\myPDFstyles.xsl .\book1\book_simple.xml > \book1\output\book.fo
+xsltproc.exe .\myCustomPDF\myPDFstyles.xsl .\book1\content\book_simple.xml > \book1\output\book.fo
 ----
 
-Convert DocBook file to FO file using a custom stylesheet an use xincludes (such as including legal text from a text file into the final output)
+Convert DocBook file to FO file using a custom stylesheet an use xincludes (such as including legal text or code samples from a text file into the final output)
 ----
-xsltproc.exe --xinclude .\myCustomDocbook\myPDFstyles.xsl .\book1\book_simple.xml > \book1\output\book.fo
+xsltproc.exe --xinclude .\myCustomPDF\myPDFstyles.xsl .\book1\content\book_simple.xml > \book1\output\book.fo
 ----
 
 .Additional information
@@ -95,18 +95,20 @@ Uses Apache FOP to create PDF from FO file.
 
 Convert FO file to PDF file
 ----
-fop1.1\fop.bat .\book.fo .\book.pdf 
+fop1.1\fop.bat .\book1\output\book.fo .\book1\output\book.pdf
 ----
 
 Using FOP 1.1, convert FO file to PDF file and disable complex scripts
 ----
-fop1.1\fop.bat -nocs .\book.fo .\book.pdf 
+fop1.1\fop.bat -nocs .\book1\output\book.fo .\book1\output\book.pdf
 ----
 
 Convert FO file to PDF file and use custom FOP configuration file		
 ----
-fop1.1\fop.bat -c .\myFOPconf.xconf .\book.fo .\book.pdf 
+fop1.1\fop.bat -c .\myCustomPDF\myFOPconf.xml .\book1\output\book.fo .\book1\output\book.pdf 
 ----
+Using a configuration file for FOP enables things such as font substitutions and font embedding
+
 
 Apache FOP can generate a lot of event log messages.  One easy way to control that is to go into the script that runs FOP, fop or fop.bat, enable the following two lines:
 ----
@@ -114,7 +116,6 @@ set LOGCHOICE=-Dorg.apache.commons.logging.Log=org.apache.commons.logging.impl.S
 set LOGLEVEL=-Dorg.apache.commons.logging.simplelog.defaultlog=INFO
 ----
 The last line defines what level of event log messages to display.  Change "INFO" to "WARN" or "ERROR" to display fewer messages.
-
 
 
 == Sample batch files for Windows ==
@@ -129,10 +130,10 @@ The custom FOP configuration file is for correctly associating fonts used in the
 REM Batch file to create PDF from XML DocBook files
 REM
 REM build docbook XML file from AsciiDoc book
-asciidoc -a docinfo1 -b docbook .\book1\book_simple.asciidoc
+python asciidoc-8.6.8\asciidoc.py -a docinfo1 -b docbook .\book1\content\book_simple.asciidoc
 
 REM create a FO file 
-xsltproc.exe --xinclude docbook-xsl-1.77.1/fo/docbook.xsl .\book1\book_simple.xml > .\book1\output\book.fo
+xsltproc.exe --xinclude docbook-xsl-1.77.1/fo/docbook.xsl .\book1\content\book_simple.xml > .\book1\output\book.fo
 
 REM create a PDF file 
 fop-1.1\fop.bat -c .\myCustomPDF\myFOPconf.xml .\book1\output\book.fo .\book1\output\book.pdf 
@@ -143,13 +144,13 @@ fop-1.1\fop.bat -c .\myCustomPDF\myFOPconf.xml .\book1\output\book.fo .\book1\ou
 REM Batch file to create PDF from XML DocBook files
 REM
 REM build docbook XML file from AsciiDoc book
-asciidoc -a docinfo1 -b docbook book1\book_simple.asciidoc
+python asciidoc-8.6.8\asciidoc.py -a docinfo1 -b docbook book1\content\book_simple.asciidoc
 
 REM create a FO file using a custom stylesheet
-xsltproc.exe .\myCustomPDF\myPDFstyles.xsl .\book1\book_simple.xml > .\book1\output\book.fo
+xsltproc.exe .\myCustomPDF\myPDFstyles.xsl .\book1\content\book_simple.xml > .\book1\output\book.fo
 
 REM create a PDF file with some custom parameters to minimize errors
-fop-1.1\fop.bat -c .\myCustomPDF\myFOPconf.xml .\book.fo .\book.pdf 
+fop-1.1\fop.bat -c .\myCustomPDF\myFOPconf.xml .\book1\output\book.fo .\book1\output\book.pdf 
 --------------------------------------
 
 == Document file structure ==
@@ -159,12 +160,13 @@ Here is a sample document file structure for use with Windows. Tools such as asc
 		xsltproc.exe
 		/asciidoc-8.6.8
 		/book1
-			bookname.asciidoc
-			docinfo.xml
-			chap1.asciidoc
-			chap2.asciidoc
-			chap3.asciidoc
-			glossary.asciidoc
+			/content
+				bookname.asciidoc
+				docinfo.xml
+				chap1.asciidoc
+				chap2.asciidoc
+				chap3.asciidoc
+				glossary.asciidoc
 			/images
 			/output
 		/book2
@@ -178,7 +180,8 @@ Here is a sample document file structure for use with Windows. Tools such as asc
 		/fop-1.1
 		/myCustomHTML
 		/myCustomPDF
-			myFOPconf.xml
+			myFOPconf_macosx.xconf
+			myFOPconf_win.xconf
 			myPDFstyles.xsl
 			myTitlePage.xsl
 			myTitlepageSpecFile.xml
