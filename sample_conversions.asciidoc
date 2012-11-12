@@ -95,16 +95,30 @@ Uses Apache FOP to create PDF from FO file.
 
 Convert FO file to PDF file
 ----
-fop.bat .\book.fo .\book.pdf 
+fop1.1\fop.bat .\book.fo .\book.pdf 
 ----
 
-Convert FO file to PDF file and use custom FOP configuration		
+Using FOP 1.1, convert FO file to PDF file and disable complex scripts
 ----
-fop.bat -c .\myFOPconf.xml .\book.fo .\book.pdf 
+fop1.1\fop.bat -nocs .\book.fo .\book.pdf 
 ----
+
+Convert FO file to PDF file and use custom FOP configuration file		
+----
+fop1.1\fop.bat -c .\myFOPconf.xconf .\book.fo .\book.pdf 
+----
+
+Apache FOP can generate a lot of event log messages.  One easy way to control that is to go into the script that runs FOP, fop or fop.bat, enable the following two lines:
+----
+set LOGCHOICE=-Dorg.apache.commons.logging.Log=org.apache.commons.logging.impl.SimpleLog
+set LOGLEVEL=-Dorg.apache.commons.logging.simplelog.defaultlog=INFO
+----
+The last line defines what level of event log messages to display.  Change "INFO" to "WARN" or "ERROR" to display fewer messages.
+
+
 
 == Sample batch files for Windows ==
-Although these examples are for Windows, similar scripts can be written for different operating systems. Batch files (or scripts) can be useful to integrate into your text editor to build previews of your documentation or to use with a continuous integration server to automate your workflow.  
+Although these examples are for Windows, similar scripts can be written for different operating systems. Batch files (or scripts) can be useful to integrate into your text editor to build previews of your documentation or to use with a continuous integration server to automate your workflow.
 
 For example, you can add custom build commands in the Sublime Text editor 
 
