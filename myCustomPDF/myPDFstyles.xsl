@@ -11,6 +11,7 @@
 <xsl:param name="fop1.extensions" select="1" />
 
 <xsl:param name="callout.graphics.path" select="'./common/images/callouts/'" />
+<xsl:param name="admon.graphics" select="1" />
 <xsl:param name="admon.graphics.extension" select="'.png'" />
 <xsl:param name="admon.graphics.path" select="'./common/images/admon/'" />
 
@@ -169,6 +170,10 @@
 	<xsl:attribute name="font-weight">bold</xsl:attribute>
 	<xsl:attribute name="font-style">normal</xsl:attribute>
 	<xsl:attribute name="border-bottom">0.5pt solid black</xsl:attribute>
+	<xsl:attribute name="font-size">
+		<xsl:value-of select="$body.font.master * 1.8"/>
+		<xsl:text>pt</xsl:text>
+	</xsl:attribute> 
 	<xsl:attribute name="padding-top">6pt</xsl:attribute>
 	<xsl:attribute name="padding-bottom">3pt</xsl:attribute>
 </xsl:attribute-set>   
