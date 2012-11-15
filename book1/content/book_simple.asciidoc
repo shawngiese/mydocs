@@ -8,13 +8,13 @@ v1.1, 2012-11
 
 // Push titles down one level
 :leveloffset: 1
-include::chapter1.asc[tabsize=4]
+include::chapter1.asciidoc[tabsize=4]
 
-include::chapter2.asc[]
+include::chapter2.asciidoc[]
 
-include::../../common/appendix/MigrationNotes.asc[]
+include::../../common/appendix/MigrationNotes.asciidoc[]
 
-include::glossary.asc[]
+include::glossary.asciidoc[]
 
 // Return to normal title levels
 :leveloffset: 0

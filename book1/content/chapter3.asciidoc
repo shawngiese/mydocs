@@ -86,7 +86,7 @@ http://google.com
 Run script on your system and incorporate that into the documentation.
 
 ------------------
-sys::[ls -l *.asc]
+sys::[ls -l *.asciidoc]
 ------------------
 
 === External scripts ===
