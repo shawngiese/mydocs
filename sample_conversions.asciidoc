@@ -34,12 +34,12 @@ The following are some optional commercial tools:
 == Sample AsciiDoc commands ==
 Convert AsciiDoc to Slidy presentation
 ----
-python asciidoc-8.6.8\asciidoc.py --backend slidy book1/book_simple.asciidoc 
+python asciidoc-8.6.8\asciidoc.py --backend slidy book1/content/book_simple.asciidoc 
 ----
 
 Convert AsciiDoc to HTML5
 ----
-python asciidoc-8.6.8\asciidoc.py --backend html5 book1/book_simple.asciidoc 
+python asciidoc-8.6.8\asciidoc.py --backend html5 book1/content/book_simple.asciidoc 
 ----
 
 Install qrcode plugin
@@ -105,7 +105,7 @@ fop1.1\fop.bat -nocs .\book1\output\book.fo .\book1\output\book.pdf
 
 Convert FO file to PDF file and use custom FOP configuration file		
 ----
-fop1.1\fop.bat -c .\myCustomPDF\myFOPconf.xml .\book1\output\book.fo .\book1\output\book.pdf 
+fop1.1\fop.bat -c .\myCustomPDF\myFOPconf.xconf .\book1\output\book.fo .\book1\output\book.pdf 
 ----
 Using a configuration file for FOP enables things such as font substitutions and font embedding
 
@@ -117,6 +117,7 @@ set LOGLEVEL=-Dorg.apache.commons.logging.simplelog.defaultlog=INFO
 ----
 The last line defines what level of event log messages to display.  Change "INFO" to "WARN" or "ERROR" to display fewer messages.
 
+Originally I was embedding fonts in Windows to oversome some FOP warnings.  However doing the same in MacOSX was a bit more difficult and I found that I could simply apply font substitutions in the FOP configuration.  This might also work in Windows but I have not tested it yet, so I have left two FOP configuration files, one for Windows and one for MacOSX.  Again, this was just to avoid some pesky log messages (in my case) so if those messages do not bother you, you can skip using the special FOP configuration.
 
 == Sample batch files for Windows ==
 Although these examples are for Windows, similar scripts can be written for different operating systems. Batch files (or scripts) can be useful to integrate into your text editor to build previews of your documentation or to use with a continuous integration server to automate your workflow.
@@ -124,7 +125,6 @@ Although these examples are for Windows, similar scripts can be written for diff
 For example, you can add custom build commands in the Sublime Text editor 
 
 .Sample windows batch file
-The custom FOP configuration file is for correctly associating fonts used in the PDF output.  This is not necessary when running FOP on MacOSX.  When running the same scripts in MacOSX, remove "-c .\myCustomPDF\myFOPconf.xml".
 
 --------------------------------------
 REM Batch file to create PDF from XML DocBook files
@@ -136,10 +136,10 @@ REM create a FO file
 xsltproc.exe --xinclude docbook-xsl-1.77.1/fo/docbook.xsl .\book1\content\book_simple.xml > .\book1\output\book.fo
 
 REM create a PDF file 
-fop-1.1\fop.bat -c .\myCustomPDF\myFOPconf.xml .\book1\output\book.fo .\book1\output\book.pdf 
+fop-1.1\fop.bat .\book1\output\book.fo .\book1\output\book.pdf 
 --------------------------------------
 
-.Sample windows batch file with customizations
+.Sample windows batch file with XSL customizations
 --------------------------------------
 REM Batch file to create PDF from XML DocBook files
 REM
@@ -150,7 +150,7 @@ REM create a FO file using a custom stylesheet
 xsltproc.exe .\myCustomPDF\myPDFstyles.xsl .\book1\content\book_simple.xml > .\book1\output\book.fo
 
 REM create a PDF file with some custom parameters to minimize errors
-fop-1.1\fop.bat -c .\myCustomPDF\myFOPconf.xml .\book1\output\book.fo .\book1\output\book.pdf 
+fop-1.1\fop.bat -c .\myCustomPDF\myFOPconf_win.xconf .\book1\output\book.fo .\book1\output\book.pdf 
 --------------------------------------
 
 == Document file structure ==
