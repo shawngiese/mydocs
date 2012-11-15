@@ -75,7 +75,7 @@ http://www.medocs.ch/</ulink></othername></address>
 
 <legalnotice>
   <literallayout>
-    <xi:include href="../../common/legal.txt" parse="text" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="../../common/legal/legal.txt" parse="text" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   </literallayout>
 </legalnotice>
 
