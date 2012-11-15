@@ -96,7 +96,7 @@ For example, run an external script such as a pychart and then load the resultin
 sys2::[python "{indir}/chartbar.py" --format=png --output="{outdir}/../images/test_chartbar.png" --scale=2]
 
 // Display chart image file.
-image::../images/test_barchart.png[]
+image::../images/test_chartbar.png[]
 
 
 === Importing CSV data ===

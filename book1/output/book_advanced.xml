@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+<?asciidoc-toc?>
+<?asciidoc-numbered?>
+
+<book lang="en">
+<bookinfo>
+    <title>Book Title Goes Here</title>
+    <date>2012-11</date>
+    <author>
+        <firstname>Author's</firstname>
+        <surname>Name</surname>
+    </author>
+    <authorinitials>AN</authorinitials>
+<revhistory><revision><revnumber>1.1</revnumber><date>2012-11</date><authorinitials>AN</authorinitials></revision></revhistory>
+  <!--
+  book-docinfo.xml
+  Example DocBook document information file.
+-->
+
+<mediaobject>
+  <imageobject>
+    <imagedata align="center" depth="400" fileref="../images/tiger.png"/>
+  </imageobject>
+</mediaobject>
+
+<subtitle>Subtitle of this book</subtitle>
+<productname>DocuMentor</productname>
+
+<authorgroup>
+  <author>
+    <honorific>Dr</honorific>
+    <firstname>Lois</firstname>
+    <surname>Common-Demoninator</surname>
+    <affiliation>
+      <shortaffil>Director, School of Coop. Writing.</shortaffil>
+      <jobtitle>Director of Cooperative Efforts</jobtitle>
+      <orgname>The School of Cooperative Writing</orgname>
+    </affiliation>
+  </author>
+
+  <author>
+    <honorific>Mr</honorific>
+    <firstname>Steven</firstname>
+    <surname>Norman</surname>
+    <othername role='mi'>T</othername>
+    <affiliation>
+      <shortaffil>ATI</shortaffil>
+      <jobtitle>Senior Application Analyst</jobtitle>
+      <orgname>Foobar, Inc.</orgname>
+      <orgdiv>Application Development</orgdiv>
+    </affiliation>
+  </author>
+
+  <editor>
+    <firstname>Peter</firstname>
+    <surname>Pan</surname>
+    <lineage>Sr.</lineage>
+    <othername>Spiderman</othername>
+    <authorblurb>
+      <para>
+      Peter's a super hero in his spare time.
+      </para>
+    </authorblurb>
+  </editor>
+</authorgroup>
+
+<copyright>
+  <year>2010-2012</year>
+  <holder>My Organization</holder>
+</copyright>
+
+<releaseinfo/>
+
+<printhistory>
+  <para>
+  September, 1996    First Printing
+  </para>
+</printhistory>
+
+<productnumber>2012 A</productnumber>
+
+<corpname>TypeWriter LLC</corpname>
+
+<corpauthor/>
+
+<address>Switzerland,
+<email>info@medocs.ch</email><othername><ulink url="http://www.medocs.ch/">
+http://www.medocs.ch/</ulink></othername></address>
+
+<legalnotice>
+  <literallayout>
+    <xi:include href="../../common/legal/legal.txt" parse="text" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  </literallayout>
+</legalnotice>
+
+<revhistory>
+   <revision>
+    <revnumber>2.0</revnumber>
+    <date>February 2012</date>
+    <authorinitials>PP</authorinitials>
+    <revremark>Updates.</revremark>
+  </revision>
+  <revision>
+    <revnumber>1.1</revnumber>
+    <date>May 2009</date>
+    <authorinitials>PP</authorinitials>
+    <revremark>Updates.</revremark>
+  </revision>
+  <revision>
+    <revnumber>1.0</revnumber>
+    <date>October 2003</date>
+    <authorinitials>PP</authorinitials>
+    <revremark>First release.</revremark>
+  </revision>
+</revhistory>
+</bookinfo>
+<chapter id="intro_chapter">
+<title>The First Chapter</title>
+<section id="_hi_there">
+<title>Hi there</title>
+<simpara>Something belongs here.</simpara>
+<simpara>Information about your visit can be found <link linkend="visit">here</link>.</simpara>
+<simpara><indexterm>
+  <primary>Tigers</primary><secondary>Big cats</secondary>
+</indexterm>
+<indexterm>
+  <primary>Big cats</primary>
+</indexterm></simpara>
+<figure><title>Tiger block image</title>
+<mediaobject>
+  <imageobject>
+  <imagedata fileref="../images/tiger.png"/>
+  </imageobject>
+  <textobject><phrase>Tiger image</phrase></textobject>
+</mediaobject>
+</figure>
+<note><simpara>This is something important</simpara></note>
+<sidebar>
+<title>An Example Sidebar</title>
+<simpara>Any AsciiDoc SectionBody element (apart from
+SidebarBlocks) can be placed inside a sidebar.</simpara>
+</sidebar>
+<formalpara><title>Listing block for verbatim text</title><para>
+<screen>#include &lt;stdio.h&gt;
+
+int main() {
+   printf("Hello World!\n");
+   exit(0);
+}</screen>
+</para></formalpara>
+</section>
+<section id="_section_1">
+<title>Section 1</title>
+<simpara>Something belongs here.</simpara>
+<section id="_section_2">
+<title>Section 2</title>
+<simpara>Something belongs here.</simpara>
+<section id="_section_3">
+<title>Section 3</title>
+<simpara>Something belongs here.</simpara>
+</section>
+</section>
+</section>
+</chapter>
+<chapter id="information_chapter">
+<title>The Second Chapter</title>
+<section id="_hi_there_2">
+<title>Hi there</title>
+<simpara>Something belongs here</simpara>
+<simpara id="visit">You can see more things about your visit.</simpara>
+</section>
+<section id="_index_examples">
+<title>Index examples</title>
+<simpara>This is an <indexterm><primary>inline</primary></indexterm>inline index entry.
+<indexterm>
+  <primary>Big cats</primary><secondary>Lions</secondary>
+</indexterm>
+<indexterm>
+  <primary>Lions</primary>
+</indexterm>
+<indexterm>
+  <primary>Big cats</primary><secondary>Tigers</secondary><tertiary>Bengal Tiger</tertiary>
+</indexterm>
+<indexterm>
+  <primary>Tigers</primary><secondary>Bengal Tiger</secondary>
+</indexterm>
+<indexterm>
+  <primary>Bengal Tiger</primary>
+</indexterm>
+<indexterm>
+  <primary>Big cats</primary><secondary>Tigers</secondary><tertiary>Siberian Tiger</tertiary>
+</indexterm>
+<indexterm>
+  <primary>Tigers</primary><secondary>Siberian Tiger</secondary>
+</indexterm>
+<indexterm>
+  <primary>Siberian Tiger</primary>
+</indexterm></simpara>
+<simpara>Text markers
+<emphasis role="strong">Marker</emphasis></simpara>
+<simpara><emphasis>Italic marker</emphasis></simpara>
+<simpara>Replacement text
+&#169; copyright, &#8482; trademark, &#174; registered trademark,&#8201;&#8212;&#8201;em dash, &#8230; ellipsis, &#8594; right arrow, &#8592; left arrow, &#8658; right
+double arrow, &#8656; left double arrow.</simpara>
+<simpara>[red]Block titles</simpara>
+<itemizedlist><title>Notes</title>
+<listitem>
+<simpara>
+Note 1.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Note 2.
+</simpara>
+</listitem>
+</itemizedlist>
+<example>
+<title>An example task</title>
+<simpara>Qui in magna commodo, est labitur dolorum an. Est ne magna primis
+adolescens.</simpara>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>
+do this
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+then do this
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+finally do this
+</simpara>
+</listitem>
+</orderedlist>
+</example>
+<table
+frame="all"
+rowsep="1" colsep="1"
+>
+<title>Simple table</title>
+<?dbhtml table-width="60%"?>
+<?dbfo table-width="60%"?>
+<?dblatex table-width="60%"?>
+<tgroup cols="2">
+<colspec colname="col_1" colwidth="128*"/>
+<colspec colname="col_2" colwidth="128*"/>
+<thead>
+<row>
+<entry align="left" valign="top"> Header </entry>
+<entry align="left" valign="top"> more</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left" valign="top"><simpara>Cats</simpara></entry>
+<entry align="left" valign="top"><simpara>dogs</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>Mice</simpara></entry>
+<entry align="left" valign="top"><simpara>scorpions</simpara></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<simpara>A sample footnote is here. <footnote><simpara>An example footnote.</simpara></footnote></simpara>
+</section>
+</chapter>
+<chapter id="advanced_features">
+<title>Advanced usage</title>
+<section id="_advanced">
+<title>Advanced</title>
+<simpara>AsciiDoc supports many advanced features such as:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Creating a graphviz image
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Adding callouts
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+QR code library
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Macros to include system commands
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Loading a CSV file into a table
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Conditional inclusion macros
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Embedding images in data-uri for XHTML output
+</simpara>
+</listitem>
+</itemizedlist>
+<section id="_embed_images_in_data_uri">
+<title>Embed images in data-uri</title>
+<simpara>This is built-in to AsciiDoc and enables you to convert your PNG images into base64 encodings that are included in the HTML output file.  This avoids having to distribute the images files.  Read the AsciiDoc documentation for instructions using :data-uri:.</simpara>
+</section>
+<section id="_graphviz_charts">
+<title>Graphviz charts</title>
+<simpara>This requires that you install Graphviz on the computer that generates output.</simpara>
+<informalfigure>
+<mediaobject>
+  <imageobject>
+  <imagedata fileref="book_advanced__1.png"/>
+  </imageobject>
+  <textobject><phrase>book_advanced__1.png</phrase></textobject>
+</mediaobject>
+</informalfigure>
+<informalfigure>
+<mediaobject>
+  <imageobject>
+  <imagedata fileref="../images/test_sample2.png"/>
+  </imageobject>
+  <textobject><phrase>../images/test_sample2.png</phrase></textobject>
+</mediaobject>
+</informalfigure>
+<informalfigure>
+<mediaobject>
+  <imageobject>
+  <imagedata fileref="../images/test_sample3.png"/>
+  </imageobject>
+  <textobject><phrase>../images/test_sample3.png</phrase></textobject>
+</mediaobject>
+</informalfigure>
+</section>
+<section id="_callouts">
+<title>Callouts</title>
+<simpara>Callouts functionality is built into AsciiDoc. Read the AsciiDoc documentation for instructions.</simpara>
+<formalpara><title>MS-DOS directory listing</title><para>
+<literallayout class="monospaced">-----------------------------------------------------
+10/17/97   9:04         &lt;DIR&gt;    bin
+10/16/97  14:11         &lt;DIR&gt;    DOS            <co id="CO1-1"/>
+10/16/97  14:40         &lt;DIR&gt;    Program Files
+10/16/97  14:46         &lt;DIR&gt;    TEMP
+10/17/97   9:04         &lt;DIR&gt;    tmp
+10/16/97  14:37         &lt;DIR&gt;    WINNT
+10/16/97  14:25             119  AUTOEXEC.BAT   <co id="CO1-2"/>
+ 2/13/94   6:21          54,619  COMMAND.COM    <co id="CO1-3"/>
+10/16/97  14:25             115  CONFIG.SYS     <co id="CO1-4"/>
+11/16/97  17:17      61,865,984  pagefile.sys
+ 2/13/94   6:21           9,349  WINA20.386     <co id="CO1-5"/>
+-----------------------------------------------------</literallayout>
+</para></formalpara>
+<literallayout class="monospaced"><co id="CO1-6"/> This directory holds MS-DOS.
+<co id="CO1-7"/> System startup code for DOS.
+<co id="CO1-8"/> Some sort of Windows 3.1 hack.</literallayout>
+</section>
+<section id="_qr_code">
+<title>QR Code</title>
+<simpara>This requires that you install qrencode and the qrcode plugin for AsciiDoc on the computer that generates output.</simpara>
+<informalfigure>
+<mediaobject>
+  <imageobject>
+  <imagedata fileref="book_advanced__2.png"/>
+  </imageobject>
+  <textobject><phrase>book_advanced__2.png</phrase></textobject>
+</mediaobject>
+</informalfigure>
+</section>
+<section id="_macros">
+<title>Macros</title>
+<simpara>Run script on your system and incorporate that into the documentation.</simpara>
+<screen>-rw-r--r--  1 shawn  staff  2899 Nov  1 17:04 README.asciidoc
+-rw-r--r--  1 shawn  staff  7126 Nov 15 23:39 sample_conversions.asciidoc</screen>
+</section>
+<section id="_external_scripts">
+<title>External scripts</title>
+<simpara>For example, run an external script such as a pychart and then load the resulting image.</simpara>
+<informalfigure>
+<mediaobject>
+  <imageobject>
+  <imagedata fileref="../images/test_chartbar.png"/>
+  </imageobject>
+  <textobject><phrase>../images/test_chartbar.png</phrase></textobject>
+</mediaobject>
+</informalfigure>
+</section>
+<section id="_importing_csv_data">
+<title>Importing CSV data</title>
+<informaltable
+frame="all"
+rowsep="1" colsep="1"
+>
+<tgroup cols="5">
+<colspec colname="col_1" colwidth="11*"/>
+<colspec colname="col_2" colwidth="22*"/>
+<colspec colname="col_3" colwidth="22*"/>
+<colspec colname="col_4" colwidth="22*"/>
+<colspec colname="col_5" colwidth="22*"/>
+<thead>
+<row>
+<entry align="center" valign="top">ID</entry>
+<entry align="left" valign="top">Customer Name</entry>
+<entry align="left" valign="top">Contact Name</entry>
+<entry align="left" valign="top">Customer Address</entry>
+<entry align="left" valign="top">Phone</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="center" valign="top"><simpara>AROUT</simpara></entry>
+<entry align="left" valign="top"><simpara>Around the Horn</simpara></entry>
+<entry align="left" valign="top"><simpara>Thomas Hardy</simpara></entry>
+<entry align="left" valign="top"><simpara>120 Hanover Sq.
+London</simpara></entry>
+<entry align="left" valign="top"><simpara>(171) 555-7788</simpara></entry>
+</row>
+<row>
+<entry align="center" valign="top"><simpara>BERGS</simpara></entry>
+<entry align="left" valign="top"><simpara>Berglunds snabbkop</simpara></entry>
+<entry align="left" valign="top"><simpara>Christina Berglund</simpara></entry>
+<entry align="left" valign="top"><simpara>Berguvsvagen  8
+Lulea</simpara></entry>
+<entry align="left" valign="top"><simpara>0921-12 34 65</simpara></entry>
+</row>
+<row>
+<entry align="center" valign="top"><simpara>BLAUS</simpara></entry>
+<entry align="left" valign="top"><simpara>Blauer See Delikatessen</simpara></entry>
+<entry align="left" valign="top"><simpara>Hanna Moos</simpara></entry>
+<entry align="left" valign="top"><simpara>Forsterstr. 57
+Mannheim</simpara></entry>
+<entry align="left" valign="top"><simpara>0621-08460</simpara></entry>
+</row>
+<row>
+<entry align="center" valign="top"><simpara>BLONP</simpara></entry>
+<entry align="left" valign="top"><simpara>Blondel pere et fils</simpara></entry>
+<entry align="left" valign="top"><simpara>Frederique Citeaux</simpara></entry>
+<entry align="left" valign="top"><simpara>24, place Kleber
+Strasbourg</simpara></entry>
+<entry align="left" valign="top"><simpara>88.60.15.31</simpara></entry>
+</row>
+<row>
+<entry align="center" valign="top"><simpara>BOLID</simpara></entry>
+<entry align="left" valign="top"><simpara>Bolido Comidas preparadas</simpara></entry>
+<entry align="left" valign="top"><simpara>Martin Sommer</simpara></entry>
+<entry align="left" valign="top"><simpara>C/ Araquil, 67
+Madrid</simpara></entry>
+<entry align="left" valign="top"><simpara>(91) 555 22 82</simpara></entry>
+</row>
+<row>
+<entry align="center" valign="top"><simpara>BONAP</simpara></entry>
+<entry align="left" valign="top"><simpara>Bon app'</simpara></entry>
+<entry align="left" valign="top"><simpara>Laurence Lebihan</simpara></entry>
+<entry align="left" valign="top"><simpara>12, rue des Bouchers
+Marseille</simpara></entry>
+<entry align="left" valign="top"><simpara>91.24.45.40</simpara></entry>
+</row>
+<row>
+<entry align="center" valign="top"><simpara>BOTTM</simpara></entry>
+<entry align="left" valign="top"><simpara>Bottom-Dollar Markets</simpara></entry>
+<entry align="left" valign="top"><simpara>Elizabeth Lincoln</simpara></entry>
+<entry align="left" valign="top"><simpara>23 Tsawassen Blvd.
+Tsawassen</simpara></entry>
+<entry align="left" valign="top"><simpara>(604) 555-4729</simpara></entry>
+</row>
+<row>
+<entry align="center" valign="top"><simpara>BSBEV</simpara></entry>
+<entry align="left" valign="top"><simpara>B&#8217;s Beverages</simpara></entry>
+<entry align="left" valign="top"><simpara>Victoria Ashworth</simpara></entry>
+<entry align="left" valign="top"><simpara>Fauntleroy Circus
+London</simpara></entry>
+<entry align="left" valign="top"><simpara>(171) 555-1212</simpara></entry>
+</row>
+<row>
+<entry align="center" valign="top"><simpara>CACTU</simpara></entry>
+<entry align="left" valign="top"><simpara>Cactus Comidas para llevar</simpara></entry>
+<entry align="left" valign="top"><simpara>Patricio Simpson</simpara></entry>
+<entry align="left" valign="top"><simpara>Cerrito 333
+Buenos Aires</simpara></entry>
+<entry align="left" valign="top"><simpara>(1) 135-5555</simpara></entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+</section>
+</section>
+</chapter>
+<appendix id="_migration_notes">
+<title>Migration Notes</title>
+<simpara>Here is some text</simpara>
+</appendix>
+<glossary id="_glossary">
+<title>Glossary</title>
+<simpara>Glossaries are optional.  Glossary entries are an example of a style of AsciiDoc labeled lists.</simpara>
+<glossentry>
+<glossterm>
+A glossary term
+</glossterm>
+<glossdef>
+<simpara>
+        The corresponding (indented) definition.
+</simpara>
+</glossdef>
+</glossentry>
+<glossentry>
+<glossterm>
+A second glossary term
+</glossterm>
+<glossdef>
+<simpara>
+        The corresponding definition.
+</simpara>
+</glossdef>
+</glossentry>
+</glossary>
+<index id="_index">
+<title>Index</title>
+</index>
+</book>

@@ -10,6 +10,10 @@
 <xsl:param name="paper.type" select="'A4'" />
 <xsl:param name="fop1.extensions" select="1" />
 
+<xsl:param name="callout.graphics.path" select="'./common/images/callouts/'" />
+<xsl:param name="admon.graphics.extension" select="'.png'" />
+<xsl:param name="admon.graphics.path" select="'./common/images/admon/'" />
+
 <xsl:param name="body.font.family" select="'Helvetica'" />
 <xsl:param name="title.font.family" select="'Helvetica'" />
 <xsl:param name="root.font.family" select="'Helvetica'" />
