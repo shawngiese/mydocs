@@ -10,9 +10,17 @@ Information about your visit can be found <<visit,here>>.
 indexterm:[Tigers,Big cats]
 
 .Tiger block image
-image::../images/tiger.png[Tiger image]
+image::../images/tiger.png[scaledwidth="50%",alt="Tiger image"]
 
 NOTE: This is something important
+
+TIP: This is something important
+
+WARNING: This is something important
+
+CAUTION: This is something important
+
+IMPORTANT: This is something important
 
 .An Example Sidebar
 ************************************************

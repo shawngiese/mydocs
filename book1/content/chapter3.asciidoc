@@ -23,7 +23,8 @@ This requires that you install Graphviz on the computer that generates output.
 
 [graphviz]
 ---------------------------------------------------------------------
-digraph A { rankdir=LR; Graphviz->AsciiDoc->HTML}
+digraph A { 
+  rankdir=LR; Graphviz->AsciiDoc->HTML}
 ---------------------------------------------------------------------
 
 ["graphviz", "../images/test_sample2.png"]
@@ -43,10 +44,10 @@ digraph B {
 }
 ---------------------------------------------------------------------
 
-["graphviz", "../images/test_sample3.png"]
+["graphviz", "../images/test_sample3.svg"]
 ----
 digraph C {
-"Start node" -> "End node" [label="relationship"]
+  "Start node" -> "End node" [label=" relationship"]
 }
 ----
 
@@ -63,8 +64,8 @@ Callouts functionality is built into AsciiDoc. Read the AsciiDoc documentation f
  10/17/97   9:04         <DIR>    tmp
  10/16/97  14:37         <DIR>    WINNT
  10/16/97  14:25             119  AUTOEXEC.BAT   <2>
-  2/13/94   6:21          54,619  COMMAND.COM    <2>
- 10/16/97  14:25             115  CONFIG.SYS     <2>
+  2/13/94   6:21          54,619  COMMAND.COM    
+ 10/16/97  14:25             115  CONFIG.SYS     
  11/16/97  17:17      61,865,984  pagefile.sys
   2/13/94   6:21           9,349  WINA20.386     <3>
  -----------------------------------------------------
@@ -93,10 +94,10 @@ sys::[ls -l *.asciidoc]
 For example, run an external script such as a pychart and then load the resulting image.
 
 // Generate chart image file.
-sys2::[python "{indir}/chartbar.py" --format=png --output="{outdir}/../images/test_chartbar.png" --scale=2]
+sys2::[python "{indir}/chartbar.py" --format=svg --output="{outdir}/../images/test_chartbar.svg" --scale=1]
 
 // Display chart image file.
-image::../images/test_chartbar.png[]
+image::../images/test_chartbar.svg[scaledwidth="50%",alt="bar chart"]
 
 
 === Importing CSV data ===

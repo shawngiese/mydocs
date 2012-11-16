@@ -130,12 +130,16 @@ http://www.medocs.ch/</ulink></othername></address>
 <figure><title>Tiger block image</title>
 <mediaobject>
   <imageobject>
-  <imagedata fileref="../images/tiger.png"/>
+  <imagedata fileref="../images/tiger.png" width="50%" scalefit="1"/>
   </imageobject>
   <textobject><phrase>Tiger image</phrase></textobject>
 </mediaobject>
 </figure>
 <note><simpara>This is something important</simpara></note>
+<tip><simpara>This is something important</simpara></tip>
+<warning><simpara>This is something important</simpara></warning>
+<caution><simpara>This is something important</simpara></caution>
+<important><simpara>This is something important</simpara></important>
 <sidebar>
 <title>An Example Sidebar</title>
 <simpara>Any AsciiDoc SectionBody element (apart from
@@ -338,9 +342,9 @@ Embedding images in data-uri for XHTML output
 <informalfigure>
 <mediaobject>
   <imageobject>
-  <imagedata fileref="../images/test_sample3.png"/>
+  <imagedata fileref="../images/test_sample3.svg"/>
   </imageobject>
-  <textobject><phrase>../images/test_sample3.png</phrase></textobject>
+  <textobject><phrase>../images/test_sample3.svg</phrase></textobject>
 </mediaobject>
 </informalfigure>
 </section>
@@ -356,15 +360,15 @@ Embedding images in data-uri for XHTML output
 10/17/97   9:04         &lt;DIR&gt;    tmp
 10/16/97  14:37         &lt;DIR&gt;    WINNT
 10/16/97  14:25             119  AUTOEXEC.BAT   <co id="CO1-2"/>
- 2/13/94   6:21          54,619  COMMAND.COM    <co id="CO1-3"/>
-10/16/97  14:25             115  CONFIG.SYS     <co id="CO1-4"/>
+ 2/13/94   6:21          54,619  COMMAND.COM
+10/16/97  14:25             115  CONFIG.SYS
 11/16/97  17:17      61,865,984  pagefile.sys
- 2/13/94   6:21           9,349  WINA20.386     <co id="CO1-5"/>
+ 2/13/94   6:21           9,349  WINA20.386     <co id="CO1-3"/>
 -----------------------------------------------------</literallayout>
 </para></formalpara>
-<literallayout class="monospaced"><co id="CO1-6"/> This directory holds MS-DOS.
-<co id="CO1-7"/> System startup code for DOS.
-<co id="CO1-8"/> Some sort of Windows 3.1 hack.</literallayout>
+<literallayout class="monospaced"><co id="CO1-4"/> This directory holds MS-DOS.
+<co id="CO1-5"/> System startup code for DOS.
+<co id="CO1-6"/> Some sort of Windows 3.1 hack.</literallayout>
 </section>
 <section id="_qr_code">
 <title>QR Code</title>
@@ -381,8 +385,8 @@ Embedding images in data-uri for XHTML output
 <section id="_macros">
 <title>Macros</title>
 <simpara>Run script on your system and incorporate that into the documentation.</simpara>
-<screen>-rw-r--r--  1 shawn  staff  2899 Nov  1 17:04 README.asciidoc
--rw-r--r--  1 shawn  staff  7126 Nov 15 23:39 sample_conversions.asciidoc</screen>
+<screen>-rw-r--r--  1 shawn  staff  2915 Nov 15 23:47 README.asciidoc
+-rw-r--r--  1 shawn  staff  7445 Nov 15 23:47 sample_conversions.asciidoc</screen>
 </section>
 <section id="_external_scripts">
 <title>External scripts</title>
@@ -390,9 +394,9 @@ Embedding images in data-uri for XHTML output
 <informalfigure>
 <mediaobject>
   <imageobject>
-  <imagedata fileref="../images/test_chartbar.png"/>
+  <imagedata fileref="../images/test_chartbar.svg" width="50%" scalefit="1"/>
   </imageobject>
-  <textobject><phrase>../images/test_chartbar.png</phrase></textobject>
+  <textobject><phrase>bar chart</phrase></textobject>
 </mediaobject>
 </informalfigure>
 </section>

@@ -9,6 +9,10 @@
 
 <xsl:param name="paper.type" select="'A4'" />
 <xsl:param name="fop1.extensions" select="1" />
+<xsl:param name="generate.toc" select="'book toc,title'"/>
+
+<xsl:param name="default.image.width" select="125" />
+
 
 <xsl:param name="callout.graphics.path" select="'./common/images/callouts/'" />
 <xsl:param name="admon.graphics" select="1" />
