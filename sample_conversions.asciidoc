@@ -62,6 +62,17 @@ Running AsciiDoc on Microsoft Windows
 python c:\mydocs\asciidoc-8.6.8\asciidoc.py -a docinfo1 -b docbook -o ./book1/output/book_simple.xml book1\content\book_simple.asciidoc
 ----
 
+Convert AsciiDoc to slidy HTML presentation
+----
+python c:\mydocs\asciidoc-8.6.8\asciidoc.py -a iconsdir="../../common/images/" -b slidy -o ./book1/output/slidy.html book1/content/book_advanced.asciidoc
+----
+
+Convert AsciiDoc to HTML5 page
+----
+python c:\mydocs\asciidoc-8.6.8\asciidoc.py -a iconsdir="../../common/images/" -b html5 -o ./book1/output/myHTML5.html book1/content/book_advanced.asciidoc
+----
+
+
 == Sample XSL conversions ==
 Uses xsltproc and current XSL stylesheets to convert Docbook to FO. You must have already converted your document to a DocBook file with AsciiDoc.
 

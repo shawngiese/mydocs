@@ -342,9 +342,9 @@ Embedding images in data-uri for XHTML output
 <informalfigure>
 <mediaobject>
   <imageobject>
-  <imagedata fileref="../images/test_sample3.svg"/>
+  <imagedata fileref="../images/test_sample3.png"/>
   </imageobject>
-  <textobject><phrase>../images/test_sample3.svg</phrase></textobject>
+  <textobject><phrase>../images/test_sample3.png</phrase></textobject>
 </mediaobject>
 </informalfigure>
 </section>

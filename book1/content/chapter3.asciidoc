@@ -44,7 +44,7 @@ digraph B {
 }
 ---------------------------------------------------------------------
 
-["graphviz", "../images/test_sample3.svg"]
+["graphviz", "../images/test_sample3.png"]
 ----
 digraph C {
   "Start node" -> "End node" [label=" relationship"]

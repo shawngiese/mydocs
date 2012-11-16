@@ -17,7 +17,7 @@
 <xsl:param name="callout.graphics.path" select="'./common/images/callouts/'" />
 <xsl:param name="admon.graphics" select="1" />
 <xsl:param name="admon.graphics.extension" select="'.png'" />
-<xsl:param name="admon.graphics.path" select="'./common/images/admon/'" />
+<xsl:param name="admon.graphics.path" select="'./common/images/'" />
 
 <xsl:param name="body.font.family" select="'Helvetica'" />
 <xsl:param name="title.font.family" select="'Helvetica'" />
