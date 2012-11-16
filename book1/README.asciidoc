@@ -8,3 +8,11 @@ There are 2 book files. Use the book_simple.asciidoc file to build a book using 
 Use the book_advanced.asciidoc file to build a book with some advanced features of AsciiDoc such as creating a table from a CSV file, creating a chart from a Pychart file, creating a QR code image and running scripts whose results are included in the book. These special features require additional configuration of AsciiDoc.  See the AsciiDoc website for more information on these features.
 
 Images displayed in the book can be stored in the images folder.
+
+The PDF in the output folder was built with the following commands:
+
+----
+asciidoc -a docinfo1 -b docbook -o ./book1/output/book_advanced.xml book1/content/book_advanced.asciidoc
+xsltproc --xinclude myCustomPDF/myPDFstyles.xsl book1/output/book_advanced.xml > book1/output/book_advanced.fo
+./fop-1.1/fop -nocs -c myCustomPDF/myFOPconf_macosx.xconf book1/output/book_advanced.fo book1/output/book_advanced.pdf
+----
