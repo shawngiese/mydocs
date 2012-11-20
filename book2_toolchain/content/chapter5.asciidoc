@@ -1,0 +1,17 @@
+The tools I use
+===============
+
+I use the following software applications to make books using AsciiDoc:
+
+* Text editor - any will do but Sublime Text 2 is my preferred editor. (http://www.sublimetext.com)
+* AsciiDoc - downloadable files for direct file conversion to PDF, HTML and XML DocBook. I use MacPorts to install this on Mac OS X. (http://www.methods.co.nz/asciidoc/)
+* DocBook toolchain - Apache FOP, DocBook stylesheets, xsltproc (there is a toolchain packaged with the AsciiDoc installation). 
+* Custom stylesheet - for DocBook output.
+* TechSmith's SnagiIt - for screen captures. (http://www.techsmith.com)
+
+Some additional tools may also prove useful if your documentation needs go beyond the basic tools:
+
+* XMLMind's XML Editor - build output from the command line, they include some nice tools, and you can validate or customize the DocBook format directly. (http://www.xmlmind.com/xmleditor/) 
+* Render X's XEP - for additional PDF output options if needed such as creating sidebars from DocBook. (http://www.renderx.com/tools/xep.html)
+* Adobe Acrobat Professional - if any special PDF features were absolutely needed.
+* AntConc - for verifying writing guidelines and maintain common word usage. (http://www.antlab.sci.waseda.ac.jp/software.html)

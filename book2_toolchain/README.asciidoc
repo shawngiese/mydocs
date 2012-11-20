@@ -1,0 +1,10 @@
+The files in the output folder were built with the following commands:
+
+----
+asciidoc -b docbook -o ./book2_toolchain/output/book.xml book2_toolchain/content/book.asciidoc
+xsltproc --xinclude myCustomPDF/myPDFstyles.xsl book2_toolchain/output/book.xml > book2_toolchain/output/book.fo
+./fop-1.1/fop -nocs -c myCustomPDF/myFOPconf_macosx.xconf book2_toolchain/output/book.fo book2_toolchain/output/book.pdf
+
+asciidoc -b slidy -o ./book2_toolchain/output/slidy.html book2_toolchain/content/book.asciidoc
+asciidoc -b HTML5 -o ./book2_toolchain/output/myHTML5.html book2_toolchain/content/book.asciidoc
+----

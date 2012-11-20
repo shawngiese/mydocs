@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+<?asciidoc-toc?>
+<?asciidoc-numbered?>
+
+<book lang="en">
+<bookinfo>
+    <title>A DocBook Toolchain</title>
+    <date>2012-11</date>
+    <author>
+        <firstname>Shawn</firstname>
+        <surname>Giese</surname>
+    </author>
+    <authorinitials>SG</authorinitials>
+<revhistory><revision><revnumber>1.0</revnumber><date>2012-11</date><authorinitials>SG</authorinitials></revision></revhistory>
+</bookinfo>
+<chapter id="_setting_up_a_docbook_toolchain">
+<title>Setting up a DocBook toolchain</title>
+<simpara>Exporting DocBook content requires a DocBook toolchain <indexterm>
+  <primary>toolchain</primary>
+</indexterm>.  The toolchain is a collection of tools that converts your XML DocBook files into documents like PDF, ePub, HTML help, Open Office and even Microsoft Word. Sometimes the XML editing software that you use includes such a toolchain and the casual DocBook author may need never to build their own toolchain.  Other, prepackaged DocBook toolchains can be found at the  <ulink url="http://wiki.DocBook.org/DocBookTools">http://wiki.DocBook.org/DocBookTools</ulink> website.</simpara>
+<simpara>When you want to do more advanced customizations with your DocBook content, such as automating document creation, testing out new stylesheets, or creating templates for use with other document creation tools, you may need to set up your own toolchain.  For example the AsciiDoc project exports into the DocBook format but does not contain a DocBook toolchain.</simpara>
+<simpara>If you already have a DocBook toolchain with your XML editing software, it may support console commands.  In that case, you may have a quick way to achieve your customization needs.  For example, the XML editor from xmlmind.org includes a convertdoc tool for executing commands from the command-line.</simpara>
+<simpara>You can definitely create your own DocBook toolchain using open source software.  A basic DocBook toolchain includes:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+DocBook stylesheets <indexterm>
+  <primary>stylesheets</primary>
+</indexterm> that explain the rules to follow when creating the final documents, for example, these rules can say to include the document title, date, and author on the first page.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+An XML parser software <indexterm>
+  <primary>XML parser</primary>
+</indexterm> , this software applies the DocBook stylesheets to your content.  This software applies the rules from the stylesheets, for example, if you are convert the same DocBook content but change the product name in each, the XML parser will be responsible for that task. If your final document is a PDF, the XML parser will create a formatting objects (FO) file. If your fional document is HTML, the XML parser will create an HTML file.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Print formatter software to convert Formatting object (FO) files into things like PDF, AFP, PNG and other formats.
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara>In summary, you use the DocBook Stylesheets and an XSLT processor to convert your XML book into another text format, such as HTML.  If you want to convert your XML book into a non-text format, such as a PDF, you will first convert the book to a special format calleed formatting objects (FO).  Then you will use a formatting objects processor to make the transformation into a PDF file.</simpara>
+<simpara>These instructions will summarize the steps to create your own toolchain.</simpara>
+</chapter>
+<chapter id="_download_software">
+<title>Download software</title>
+<simpara>You will need the following software:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+The latest DocBook XSL stylesheets at <ulink url="http://docbook.sourceforge.net/release/xsl/current/">http://docbook.sourceforge.net/release/xsl/current/</ulink>.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+An XSLT processor such as xsltproc. Xsltproc is available for Windows in the libxslt-1.1.26.win32.zip download from <ulink url="http://www.xmlsoft.org/downloads.html">http://www.xmlsoft.org/downloads.html</ulink>.
+</simpara>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>
+Alternatively, you can use Saxon <ulink url="http://saxon.sourceforge.net/">http://saxon.sourceforge.net/</ulink> or Xalan <ulink url="http://xml.apache.org/xalan-j/">http://xml.apache.org/xalan-j/</ulink>.  These two alternatives require a Java Runtime to use.
+</simpara>
+</listitem>
+</orderedlist>
+</listitem>
+<listitem>
+<simpara>
+A Formatting Objects processor such as Apache FOP from <ulink url="http://xmlgraphics.apache.org/fop/download.html">http://xmlgraphics.apache.org/fop/download.html</ulink>. This requires a Java Runtime to use.
+</simpara>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>
+There are commercial alternatives to this such as the XMLmind XSL-FO Convertor <ulink url="http://www.xmlmind.com/foconverter/">http://www.xmlmind.com/foconverter/</ulink>, RederX XEP <ulink url="http://www.renderx.com/tools/xep.html">http://www.renderx.com/tools/xep.html</ulink>, Antenna House <ulink url="http://www.antennahouse.com/product.htm">http://www.antennahouse.com/product.htm</ulink>.
+</simpara>
+</listitem>
+</orderedlist>
+</listitem>
+</itemizedlist>
+<formalpara><title>Supporting software</title><para>If any of the software you are using in your toolchain require Java, be sure to have a Java Runtime installed on your computer.  Java can be downloaded from <ulink url="http://java.com/en/download/index.jsp">http://java.com/en/download/index.jsp</ulink>.</para></formalpara>
+<simpara>The toolchain software that you are downloading is probably compressed archives like zip. After downloading the software in the toolchain, you need a software such as 7-zip <ulink url="http://www.7-zip.org/">http://www.7-zip.org/</ulink> to open these archives.</simpara>
+<section id="_downloading_the_docbook_xsl_stylesheets_indexterm_primary_stylesheets_primary_indexterm">
+<title>Downloading the DocBook XSL Stylesheets <indexterm>
+  <primary>stylesheets</primary>
+</indexterm></title>
+<simpara>This is the easiest part of the toolchain to download.  All of the stylesheet files that you need are in a single file to download.  At the time of this writing, that file was DocBook-xsl-1.77.1.zip (6.1 MB).</simpara>
+<simpara>After opening the archive, copy all of the files to a new folder such as c:\DocBook. You should now have a folder with the following files in it.</simpara>
+<literallayout class="monospaced">c:\DocBook
+        DocBook-xsl-1.77.1</literallayout>
+</section>
+<section id="_downloading_xsltproc_indexterm_primary_xsltproc_primary_indexterm">
+<title>Downloading xsltproc <indexterm>
+  <primary>xsltproc</primary>
+</indexterm></title>
+<simpara>Xsltproc requires you to pick the operating system of your computer and then download a few files.  For Windows binaries (binaries are ready to run software, source is software that needs a software programmer to run), download the iconv, libxml2, libxslt and zlib files.  These files will have names like iconv-1.9.2.win32.zip to show which version they are.</simpara>
+<simpara>After opening the archives, copy the xsltproc.exe from the bin directory of the libxslt folder, to the c:\DocBook folder you created.  Copy the following files to the same c:\DocBook folder:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+iconv.dll from the bin directory of the iconv folder.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+libxml2.dll from the bin directory of the libxml2 folder
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+libexslt.dll from the bin directory of the libxslt folder
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+libxslt.dll from the bin directory of the libxslt folder
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+zlib1.dll from the bin directory of the zlib folder
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara>You should now have a folder with the following files in it.</simpara>
+<literallayout class="monospaced">c:\DocBook
+        DocBook-xsl-1.77.0
+        iconv.dll
+        libexslt.dll
+        libxml2.dll
+        libxslt.dll
+        xsltproc.exe
+        zlib1.dll</literallayout>
+<simpara>If you use your command prompt from this directory you can already test if the xsltproc software can run.</simpara>
+<literallayout class="monospaced">C:\DocBook&gt;xsltproc.exe
+Usage: xsltproc.exe [options] stylesheet file [file ...]
+   Options:
+        --version or -V: show the version of libxml and libxslt used
+        --verbose or -v: show logs of what's happening
+        ...</literallayout>
+<simpara>There are other processors such as Saxon, MSXML from Microsoft, and more that you can find with a Google search. The xsltproc software does not require Java and can be be downloaded for free.</simpara>
+</section>
+<section id="_downloading_apache_fop_indexterm_primary_apache_fop_primary_indexterm">
+<title>Downloading Apache FOP <indexterm>
+  <primary>Apache FOP</primary>
+</indexterm></title>
+<simpara>The Apache FOP  requires you to pick the operating system of your computer and then download a single file.  For Windows binaries (binaries are ready to run software, source is software that needs a software programmer to run), download the fop-1.0-bin.zip file.  This is the current version at the time of this writing.</simpara>
+<simpara>After opening the archive, copy the fop-1.0 directory, to the c:\DocBook folder you created. Your DocBook folder should contain the following files and folders.</simpara>
+<literallayout class="monospaced">c:\DocBook
+        fop-1.0
+        DocBook-xsl-1.77.1
+        iconv.dll
+        libexslt.dll
+        libxml2.dll
+        libxslt.dll
+        xsltproc.exe
+        zlib1.dll</literallayout>
+<simpara>Apache FOP requires a Java Runtime to be installed on your computer.  You can check if you have this installed by running "java -version" from your command prompt.  If you see something similar to the following output, your Java Runtime should be installed.</simpara>
+<literallayout class="monospaced">C:\&gt;java -version
+java version "1.6.0_27"
+Java(TM) SE Runtime Environment (build 1.6.0_27-b07)
+Java HotSpot(TM) 64-Bit Server VM (build 20.2-b06, mixed mode</literallayout>
+<simpara>If you do not see a java version number or see something similar to the following, you will need to install Java:</simpara>
+<literallayout class="monospaced">C:\&gt;java -version
+'java' is not recognized as an internal or external command, operable program or batch command.</literallayout>
+<simpara>If Java is installed, you use your command prompt from the fop-1.0 directory to test if the fop software can run.</simpara>
+<literallayout class="monospaced">C:\DocBook\fop-1.0&gt;fop.bat
+FOP Version 1.0</literallayout>
+<literallayout class="monospaced">USAGE
+fop [options] [-fo|-xml] infile [-xsl file] [-awt|-pdf|-mif|-rtf|-tiff|-png|-pcl|-ps|-txt|-at [mime]|-print] &lt;outfile&gt;
+ [OPTIONS]
+  -version          print FOP version and exit
+  -d                debug mode
+  ...</literallayout>
+</section>
+<section id="_downloading_java_indexterm_primary_java_primary_indexterm">
+<title>Downloading Java <indexterm>
+  <primary>Java</primary>
+</indexterm></title>
+<simpara>Java can be downloaded from <ulink url="http://java.com/en/download/index.jsp">http://java.com/en/download/index.jsp</ulink>. Go to the Java website to download Java for your computer. Follow the instructions to install Java and retry the "java -version" command.  If you see something similar to the following output, your Java Runtime should be installed.</simpara>
+<literallayout class="monospaced">C:\&gt;java -version
+java version "1.6.0_27"
+Java(TM) SE Runtime Environment (build 1.6.0_27-b07)
+Java HotSpot(TM) 64-Bit Server VM (build 20.2-b06, mixed mode</literallayout>
+<simpara>If you do not see a java version number check the Java help center for possible solutions.  The Java help center is available at <ulink url="http://java.com/en/download/help/index.xml">http://java.com/en/download/help/index.xml</ulink>.</simpara>
+</section>
+</chapter>
+<chapter id="_testing_the_toolchain">
+<title>Testing the toolchain</title>
+<simpara>Now that you have prepared your toolchain, it is time to test creating documents.  Create a simple DocBook file in XML.  The following text is an example of a simple DocBook file:</simpara>
+<screen>        &lt;?xml version="1.0" encoding="utf-8"?&gt;
+        &lt;book&gt;
+        &lt;info&gt;
+          &lt;title&gt;My First Book&lt;/title&gt;
+          &lt;author&gt;
+            &lt;personname&gt;&lt;firstname&gt;Jane&lt;/firstname&gt;&lt;surname&gt;Doe&lt;/surname&gt;&lt;/personname&gt;
+          &lt;/author&gt;
+          &lt;copyright&gt;&lt;year&gt;2010&lt;/year&gt;&lt;holder&gt;Jane Doe&lt;/holder&gt;&lt;/copyright&gt;
+        &lt;/info&gt;
+        &lt;preface&gt;
+                &lt;title&gt;Foreword&lt;/title&gt;
+        &lt;/preface&gt;
+        &lt;chapter&gt;
+                &lt;title&gt;My Chapter&lt;/title&gt;
+                &lt;section&gt;&lt;title&gt;First Section&lt;/title&gt;
+                &lt;para&gt;Important book content&lt;/para&gt;
+                &lt;indexterm&gt;&lt;primary&gt;books&lt;/primary&gt;&lt;/indexterm&gt;
+        &lt;/section&gt;
+        &lt;/chapter&gt;
+        &lt;glossary&gt;
+        &lt;glossentry&gt;
+                &lt;glossterm&gt;Extensible Markup Language&lt;/glossterm&gt;
+              &lt;acronym&gt;XML&lt;/acronym&gt;
+              &lt;glossdef&gt;
+               &lt;para&gt;Some reasonable definition here.&lt;/para&gt;
+              &lt;/glossdef&gt;
+            &lt;/glossentry&gt;
+        &lt;/glossary&gt;
+        &lt;index&gt;&lt;/index&gt;
+        &lt;/book&gt;</screen>
+<simpara>Save this file to the DocBook directory that you created earlier.  Give this file the name book.xml.</simpara>
+<simpara>Now run xsltproc and tell it which stylesheet to use, which XML file that contains your book, and where to save the finished document.  You must run xsltproc from the directory where it is located.  For example:</simpara>
+<literallayout class="monospaced">C:\DocBook&gt;xsltproc.exe DocBook-xsl-1.77.1\html\DocBook.xsl book.xml &gt; book.html</literallayout>
+<simpara>Now, you should have a new HTML file in your DocBook directory called book.html.  Open it up in your preferred web browser and you should see all of your content.  Change some of the content in book.xml and try it again, for example, change the book title.  See if you can generate other types of documents from your book.xml file, for example epub.</simpara>
+<simpara>If you have installed and tested FOP, you can also create a PDF.</simpara>
+<screen>        C:\DocBook&gt;xsltproc.exe DocBook-xsl-1.77.1\fo\DocBook.xsl book.xml &gt; book.fo
+        Making portrait pages on USletter paper (8.5inx11in)
+        C:\cd fop-1.1
+        C:\DocBook\fop-1.1&gt;fop \DocBook\book.fo -pdf \DocBook\book.pdf</screen>
+<simpara>Now, you should have a new PDF file in your DocBook directory called book.pdf. The command for running FOP looks a little different since you run FOP inside its own directory are using ".\" to tell the software to go up one directory to where the XML file is located.  There may be some warning messages generated by FOP but none of them should stop the creation of a nice, new PDF file.</simpara>
+<simpara>Open the book.pdf in your Acrobat Reader and you should see all of your content. See if you can generate other types of documents from your book.fo file, for example rtf.</simpara>
+<simpara>Congratulations, you now have a new DocBook toolchain. This is a good time to archive the DocBook folder that you are using.</simpara>
+</chapter>
+<chapter id="_customizing_docbook">
+<title>Customizing DocBook</title>
+<simpara>Now that you have seen some sample output for a document you might want to change the output.  This is done by setting parameters in the DocBook stylesheets.  Some examples of customizations:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+changing the CSS stylesheet
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+change default image widths
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+use profiles when creating your document
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+add bookmarks to the PDF
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+changing the fonts used in the PDF
+</simpara>
+</listitem>
+</itemizedlist>
+<bibliography id="_references">
+<title>References</title>
+<simpara>Some references that I&#8217;ve found very useful are listed here:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+DocBook 5: The Definitive Guide <ulink url="http://www.DocBook.org/tdg5/en/html/">http://www.DocBook.org/tdg5/en/html/</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+DocBook XSL: The Complete Guide <ulink url="http://www.sagehill.net/DocBookxsl/">http://www.sagehill.net/DocBookxsl/</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+DocBook FAQ <ulink url="http://www.dpawson.co.uk/DocBook/">http://www.dpawson.co.uk/DocBook/</ulink>
+</simpara>
+</listitem>
+</itemizedlist>
+</bibliography>
+</chapter>
+<chapter id="_the_tools_i_use">
+<title>The tools I use</title>
+<simpara>I use the following software applications to make books using AsciiDoc:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Text editor - any will do but Sublime Text 2 is my preferred editor. (<ulink url="http://www.sublimetext.com">http://www.sublimetext.com</ulink>)
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+AsciiDoc - downloadable files for direct file conversion to PDF, HTML and XML DocBook. I use MacPorts to install this on Mac OS X. (<ulink url="http://www.methods.co.nz/asciidoc/">http://www.methods.co.nz/asciidoc/</ulink>)
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+DocBook toolchain - Apache FOP, DocBook stylesheets, xsltproc (there is a toolchain packaged with the AsciiDoc installation).
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Custom stylesheet - for DocBook output.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+TechSmith&#8217;s SnagiIt - for screen captures. (<ulink url="http://www.techsmith.com">http://www.techsmith.com</ulink>)
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara>Some additional tools may also prove useful if your documentation needs go beyond the basic tools:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+XMLMind&#8217;s XML Editor - build output from the command line, they include some nice tools, and you can validate or customize the DocBook format directly. (<ulink url="http://www.xmlmind.com/xmleditor/">http://www.xmlmind.com/xmleditor/</ulink>)
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Render X&#8217;s XEP - for additional PDF output options if needed such as creating sidebars from DocBook. (<ulink url="http://www.renderx.com/tools/xep.html">http://www.renderx.com/tools/xep.html</ulink>)
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Adobe Acrobat Professional - if any special PDF features were absolutely needed.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+AntConc - for verifying writing guidelines and maintain common word usage. (<ulink url="http://www.antlab.sci.waseda.ac.jp/software.html">http://www.antlab.sci.waseda.ac.jp/software.html</ulink>)
+</simpara>
+</listitem>
+</itemizedlist>
+</chapter>
+<index id="_index">
+<title>Index</title>
+</index>
+</book>

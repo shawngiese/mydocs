@@ -1,0 +1,105 @@
+Download software
+=================
+
+You will need the following software:
+
+* The latest DocBook XSL stylesheets at http://docbook.sourceforge.net/release/xsl/current/.
+* An XSLT processor such as xsltproc. Xsltproc is available for Windows in the libxslt-1.1.26.win32.zip download from http://www.xmlsoft.org/downloads.html. 
+	. Alternatively, you can use Saxon http://saxon.sourceforge.net/ or Xalan http://xml.apache.org/xalan-j/.  These two alternatives require a Java Runtime to use.
+* A Formatting Objects processor such as Apache FOP from http://xmlgraphics.apache.org/fop/download.html. This requires a Java Runtime to use. 
+	. There are commercial alternatives to this such as the XMLmind XSL-FO Convertor http://www.xmlmind.com/foconverter/, RederX XEP http://www.renderx.com/tools/xep.html, Antenna House http://www.antennahouse.com/product.htm.
+
+.Supporting software
+If any of the software you are using in your toolchain require Java, be sure to have a Java Runtime installed on your computer.  Java can be downloaded from http://java.com/en/download/index.jsp.
+
+The toolchain software that you are downloading is probably compressed archives like zip. After downloading the software in the toolchain, you need a software such as 7-zip http://www.7-zip.org/ to open these archives.
+
+== Downloading the DocBook XSL Stylesheets (((stylesheets)))
+This is the easiest part of the toolchain to download.  All of the stylesheet files that you need are in a single file to download.  At the time of this writing, that file was DocBook-xsl-1.77.1.zip (6.1 MB).
+
+After opening the archive, copy all of the files to a new folder such as c:\DocBook. You should now have a folder with the following files in it.
+
+	c:\DocBook
+		DocBook-xsl-1.77.1    
+
+== Downloading xsltproc (((xsltproc)))
+Xsltproc requires you to pick the operating system of your computer and then download a few files.  For Windows binaries (binaries are ready to run software, source is software that needs a software programmer to run), download the iconv, libxml2, libxslt and zlib files.  These files will have names like iconv-1.9.2.win32.zip to show which version they are.  
+
+After opening the archives, copy the xsltproc.exe from the bin directory of the libxslt folder, to the c:\DocBook folder you created.  Copy the following files to the same c:\DocBook folder:
+
+ * iconv.dll from the bin directory of the iconv folder.
+ * libxml2.dll from the bin directory of the libxml2 folder
+ * libexslt.dll from the bin directory of the libxslt folder
+ * libxslt.dll from the bin directory of the libxslt folder
+ * zlib1.dll from the bin directory of the zlib folder
+
+You should now have a folder with the following files in it.
+
+	c:\DocBook
+		DocBook-xsl-1.77.0
+		iconv.dll     
+		libexslt.dll   
+		libxml2.dll   
+		libxslt.dll     
+		xsltproc.exe   
+		zlib1.dll     
+
+If you use your command prompt from this directory you can already test if the xsltproc software can run.
+
+	C:\DocBook>xsltproc.exe
+	Usage: xsltproc.exe [options] stylesheet file [file ...]
+	   Options:
+	        --version or -V: show the version of libxml and libxslt used
+	        --verbose or -v: show logs of what's happening
+	        ...
+ 
+There are other processors such as Saxon, MSXML from Microsoft, and more that you can find with a Google search. The xsltproc software does not require Java and can be be downloaded for free.  
+
+== Downloading Apache FOP (((Apache FOP)))
+The Apache FOP  requires you to pick the operating system of your computer and then download a single file.  For Windows binaries (binaries are ready to run software, source is software that needs a software programmer to run), download the fop-1.0-bin.zip file.  This is the current version at the time of this writing.
+
+After opening the archive, copy the fop-1.0 directory, to the c:\DocBook folder you created. Your DocBook folder should contain the following files and folders.
+
+	c:\DocBook
+		fop-1.0
+		DocBook-xsl-1.77.1
+		iconv.dll     
+		libexslt.dll   
+		libxml2.dll   
+		libxslt.dll     
+		xsltproc.exe   
+		zlib1.dll    
+
+Apache FOP requires a Java Runtime to be installed on your computer.  You can check if you have this installed by running "java -version" from your command prompt.  If you see something similar to the following output, your Java Runtime should be installed.
+
+	C:\>java -version
+	java version "1.6.0_27"
+	Java(TM) SE Runtime Environment (build 1.6.0_27-b07)
+	Java HotSpot(TM) 64-Bit Server VM (build 20.2-b06, mixed mode
+
+If you do not see a java version number or see something similar to the following, you will need to install Java:
+
+	C:\>java -version
+	'java' is not recognized as an internal or external command, operable program or batch command.
+
+If Java is installed, you use your command prompt from the fop-1.0 directory to test if the fop software can run.
+	
+	C:\DocBook\fop-1.0>fop.bat
+	FOP Version 1.0
+
+	USAGE
+	fop [options] [-fo|-xml] infile [-xsl file] [-awt|-pdf|-mif|-rtf|-tiff|-png|-pcl|-ps|-txt|-at [mime]|-print] <outfile>
+	 [OPTIONS]
+	  -version          print FOP version and exit
+	  -d                debug mode
+	  ...
+
+== Downloading Java (((Java)))
+Java can be downloaded from http://java.com/en/download/index.jsp. Go to the Java website to download Java for your computer. Follow the instructions to install Java and retry the "java -version" command.  If you see something similar to the following output, your Java Runtime should be installed.
+
+	C:\>java -version
+	java version "1.6.0_27"
+	Java(TM) SE Runtime Environment (build 1.6.0_27-b07)
+	Java HotSpot(TM) 64-Bit Server VM (build 20.2-b06, mixed mode
+
+If you do not see a java version number check the Java help center for possible solutions.  The Java help center is available at http://java.com/en/download/help/index.xml.

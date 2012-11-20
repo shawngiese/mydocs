@@ -1,0 +1,18 @@
+Setting up a DocBook toolchain
+==============================
+
+Exporting DocBook content requires a DocBook toolchain (((toolchain))).  The toolchain is a collection of tools that converts your XML DocBook files into documents like PDF, ePub, HTML help, Open Office and even Microsoft Word. Sometimes the XML editing software that you use includes such a toolchain and the casual DocBook author may need never to build their own toolchain.  Other, prepackaged DocBook toolchains can be found at the  http://wiki.DocBook.org/DocBookTools website.
+
+When you want to do more advanced customizations with your DocBook content, such as automating document creation, testing out new stylesheets, or creating templates for use with other document creation tools, you may need to set up your own toolchain.  For example the AsciiDoc project exports into the DocBook format but does not contain a DocBook toolchain.  
+
+If you already have a DocBook toolchain with your XML editing software, it may support console commands.  In that case, you may have a quick way to achieve your customization needs.  For example, the XML editor from xmlmind.org includes a convertdoc tool for executing commands from the command-line.
+
+You can definitely create your own DocBook toolchain using open source software.  A basic DocBook toolchain includes:
+
+* DocBook stylesheets (((stylesheets))) that explain the rules to follow when creating the final documents, for example, these rules can say to include the document title, date, and author on the first page.
+* An XML parser software (((XML parser))) , this software applies the DocBook stylesheets to your content.  This software applies the rules from the stylesheets, for example, if you are convert the same DocBook content but change the product name in each, the XML parser will be responsible for that task. If your final document is a PDF, the XML parser will create a formatting objects (FO) file. If your fional document is HTML, the XML parser will create an HTML file.
+* Print formatter software to convert Formatting object (FO) files into things like PDF, AFP, PNG and other formats.  
+
+In summary, you use the DocBook Stylesheets and an XSLT processor to convert your XML book into another text format, such as HTML.  If you want to convert your XML book into a non-text format, such as a PDF, you will first convert the book to a special format calleed formatting objects (FO).  Then you will use a formatting objects processor to make the transformation into a PDF file.
+
+These instructions will summarize the steps to create your own toolchain. 

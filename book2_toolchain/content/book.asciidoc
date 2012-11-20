@@ -1,0 +1,27 @@
+A DocBook Toolchain
+====================
+Shawn Giese
+v1.0, 2012-11
+:doctype: book
+:icons:
+:max-width: 45em
+
+// Push titles down one level
+:leveloffset: 1
+include::chapter1.asciidoc[]
+
+include::chapter2.asciidoc[]
+
+include::chapter3.asciidoc[]
+
+include::chapter4.asciidoc[]
+
+include::chapter5.asciidoc[]
+
+//include::glossary.asciidoc[]
+
+// Return to normal title levels
+:leveloffset: 0
+
+Index
+=====

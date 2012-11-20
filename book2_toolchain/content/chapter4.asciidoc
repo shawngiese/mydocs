@@ -1,0 +1,17 @@
+Customizing DocBook
+===================
+
+Now that you have seen some sample output for a document you might want to change the output.  This is done by setting parameters in the DocBook stylesheets.  Some examples of customizations:
+ 
+* changing the CSS stylesheet
+* change default image widths
+* use profiles when creating your document
+* add bookmarks to the PDF
+* changing the fonts used in the PDF
+
+== References
+Some references that I've found very useful are listed here:
+
+* DocBook 5: The Definitive Guide http://www.DocBook.org/tdg5/en/html/
+* DocBook XSL: The Complete Guide http://www.sagehill.net/DocBookxsl/
+* DocBook FAQ http://www.dpawson.co.uk/DocBook/
