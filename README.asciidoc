@@ -1,5 +1,5 @@
-Some DocBook solutions
-======================
+DocBook solutions
+=================
 
 Two documentation solutions are presented here. The first, uses AsciiDoc markup to create multiple text files that can be built into a book or website. The second is a collection of DocBook customizations that I have found useful. The folder structure is a possible method of organizing your files, customize it as needed. 
 
