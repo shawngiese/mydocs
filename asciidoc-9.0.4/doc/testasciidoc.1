@@ -1,0 +1,145 @@
+'\" t
+.\"     Title: testasciidoc
+.\"    Author: [see the "AUTHOR" section]
+.\" Generator: DocBook XSL Stylesheets v1.79.1 <http://docbook.sf.net/>
+.\"      Date: 10/30/2020
+.\"    Manual: \ \&
+.\"    Source: \ \&
+.\"  Language: English
+.\"
+.TH "TESTASCIIDOC" "1" "10/30/2020" "\ \&" "\ \&"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+testasciidoc \- Run AsciiDoc conformance tests specified in configuration file\&.
+.SH "SYNOPSIS"
+.sp
+\fBtestasciidoc\fR [\fIOPTIONS\fR] \fICOMMAND\fR
+.SH "DESCRIPTION"
+.sp
+The testasciidoc command runs AsciiDoc conformance tests specified in configuration file\&.
+.SH "COMMANDS"
+.sp
+The testasciidoc toolset has three different commands:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+testasciidoc list
+testasciidoc run [\-n, \-\-number NUMBER] [\-b, \-\-backend BACKEND] [OPTIONS]
+testasciidoc update [\-n, \-\-number NUMBER] [\-b, \-\-backend BACKEND] [OPTIONS]
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+The commands perform as follows:
+.PP
+\fBlist\fR
+.RS 4
+List available tests cases\&.
+.RE
+.PP
+\fBrun\fR
+.RS 4
+Execute tests (regenerate temporary test cases and compare them to the reference files)\&.
+.RE
+.PP
+\fBupdate\fR
+.RS 4
+Regenerate and update test data reference files\&. Needs to be launched at least once to have the reference files to compare to during the tests\&.
+.RE
+.sp
+Where:
+.PP
+\fBNUMBER\fR
+.RS 4
+Is the index number of the test case from the
+testasciidoc list
+command\&.
+.RE
+.PP
+\fBBACKEND\fR
+.RS 4
+Is the asciidoc backend to use\&.
+.RE
+.PP
+\fBOPTIONS\fR
+.RS 4
+Are the options listed below\&.
+.RE
+.SH "OPTIONS"
+.PP
+\fB\-f, \-\-conf\-file\fR=\fICONF_FILE\fR
+.RS 4
+Use configuration file CONF_FILE for more information about the configuration file format refer to the tests documentation\&.
+.RE
+.PP
+\fB\-\-force\fR
+.RS 4
+Update all test data overwriting existing data
+.RE
+.SH "EXAMPLES"
+.PP
+testasciidoc list
+.RS 4
+Lists all the test actions available for running or updating\&.
+.RE
+.PP
+testasciidoc run
+.RS 4
+Runs all the testing actions available\&.
+.RE
+.PP
+testasciidoc run \-\-number 1 \-\-backend html5 \-\-conf\-file=/etc/asciidoc/testasciidoc\&.conf
+.RS 4
+Run the test case 1 for the html5 asciidoc backend using the configuration file /etc/asciidoc/testasciidoc\&.conf\&.
+.RE
+.PP
+testasciidoc update \-\-number 1 \-\-backend html5
+.RS 4
+Generate or update the reference files used for the tests cases 1st action of the html5 asciidoc backend\&.
+.RE
+.SH "EXIT STATUS"
+.PP
+\fB0\fR
+.RS 4
+Success
+.RE
+.PP
+\fB1\fR
+.RS 4
+Failure (syntax or usage error; configuration error; document processing failure; unexpected error)\&.
+.RE
+.SH "BUGS"
+.sp
+See the AsciiDoc distribution BUGS file\&.
+.SH "AUTHOR"
+.sp
+AsciiDoc was originally written by Stuart Rackham\&. Many people have contributed to it\&.
+.SH "RESOURCES"
+.sp
+GitHub: https://github\&.com/asciidoc/asciidoc\-py3
+.sp
+Main web site: https://asciidoc\&.org/
+.SH "SEE ALSO"
+.sp
+asciidoc(1), a2x(1)

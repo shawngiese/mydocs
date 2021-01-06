@@ -17,10 +17,9 @@ var whTOC = [
 ["Embed images in data-uri","ch03s01s01.html",null],
 ["Graphviz charts","ch03s01s02.html",null],
 ["Callouts","ch03s01s03.html",null],
-["QR Code","ch03s01s04.html",null],
-["Macros","ch03s01s05.html",null],
-["External scripts","ch03s01s06.html",null],
-["Importing CSV data","ch03s01s07.html",null]
+["Macros","ch03s01s04.html",null],
+["External scripts","ch03s01s05.html",null],
+["Importing CSV data","ch03s01s06.html",null]
 ]]
 ]],
 ["Migration Notes","apa.html",null],

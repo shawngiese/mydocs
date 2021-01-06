@@ -6,13 +6,6 @@
 <book lang="en">
 <bookinfo>
     <title>Book Title Goes Here</title>
-    <date>2012-11</date>
-    <author>
-        <firstname>Author's</firstname>
-        <surname>Name</surname>
-    </author>
-    <authorinitials>AN</authorinitials>
-<revhistory><revision><revnumber>1.1</revnumber><date>2012-11</date><authorinitials>AN</authorinitials></revision></revhistory>
   <!--
   book-docinfo.xml
   Example DocBook document information file.
@@ -95,6 +88,12 @@ http://www.medocs.ch/</ulink></othername></address>
 </legalnotice>
 
 <revhistory>
+  <revision>
+    <revnumber>2.1</revnumber>
+    <date>Jan 2021</date>
+    <authorinitials>PP</authorinitials>
+    <revremark>Updates.</revremark>
+  </revision>
    <revision>
     <revnumber>2.0</revnumber>
     <date>February 2012</date>
@@ -205,8 +204,7 @@ int main() {
 <emphasis role="strong">Marker</emphasis></simpara>
 <simpara><emphasis>Italic marker</emphasis></simpara>
 <simpara>Replacement text
-&#169; copyright, &#8482; trademark, &#174; registered trademark,&#8201;&#8212;&#8201;em dash, &#8230; ellipsis, &#8594; right arrow, &#8592; left arrow, &#8658; right
-double arrow, &#8656; left double arrow.</simpara>
+&#169; copyright, &#8482; trademark, &#174; registered trademark,&#8201;&#8212;&#8201;em dash, &#8230; ellipsis.</simpara>
 <simpara>[red]Block titles</simpara>
 <itemizedlist><title>Notes</title>
 <listitem>
@@ -292,11 +290,6 @@ Adding callouts
 </listitem>
 <listitem>
 <simpara>
-QR code library
-</simpara>
-</listitem>
-<listitem>
-<simpara>
 Macros to include system commands
 </simpara>
 </listitem>
@@ -318,11 +311,11 @@ Embedding images in data-uri for XHTML output
 </itemizedlist>
 <section id="_embed_images_in_data_uri">
 <title>Embed images in data-uri</title>
-<simpara>This is built-in to AsciiDoc and enables you to convert your PNG images into base64 encodings that are included in the HTML output file.  This avoids having to distribute the images files.  Read the AsciiDoc documentation for instructions using :data-uri:.</simpara>
+<simpara>This is built-in to AsciiDoc and enables you to convert your PNG images into base64 encodings that are included in the HTML output file. When you use this feature, the image data is included in the asciidoc file and avoids having to distribute the images files. For more information read the AsciiDoc documentation for instructions using :data-uri:.</simpara>
 </section>
 <section id="_graphviz_charts">
 <title>Graphviz charts</title>
-<simpara>This requires that you install Graphviz on the computer that generates output.</simpara>
+<simpara>This requires that you install Graphviz on the computer that generates output. If you see the error message "IndexError: list index out of range" then Graphviz cannot be found. In case of such an error check that Graphviz is on your environment "PATH" variable. Depending on how Graphviz was installed, you also may need to run "dot -c" (with installer's privileges) to register the plugins.</simpara>
 <informalfigure>
 <mediaobject>
   <imageobject>
@@ -370,33 +363,31 @@ Embedding images in data-uri for XHTML output
 <co id="CO1-5"/> System startup code for DOS.
 <co id="CO1-6"/> Some sort of Windows 3.1 hack.</literallayout>
 </section>
-<section id="_qr_code">
-<title>QR Code</title>
-<simpara>This requires that you install qrencode and the qrcode plugin for AsciiDoc on the computer that generates output.</simpara>
-<informalfigure>
-<mediaobject>
-  <imageobject>
-  <imagedata fileref="book_advanced__2.png"/>
-  </imageobject>
-  <textobject><phrase>book_advanced__2.png</phrase></textobject>
-</mediaobject>
-</informalfigure>
-</section>
 <section id="_macros">
 <title>Macros</title>
-<simpara>Run script on your system and incorporate that into the documentation.</simpara>
-<screen>-rw-r--r--  1 shawn  staff  2915 Nov 15 23:47 README.asciidoc
--rw-r--r--  1 shawn  staff  7445 Nov 15 23:47 sample_conversions.asciidoc</screen>
+<simpara>Run script on your system and incorporate that into the documentation. Using dir in a Windows environment. Change to a different command to match your OS.</simpara>
+<screen> Volume in drive C is BOOTC
+ Volume Serial Number is 1F34-7217
+
+ Directory of C:\asciidoc
+
+
+ Directory of C:\asciidoc
+
+01/06/2021  12:41 AM             8,053 sample_conversions.asciidoc
+               1 File(s)          8,053 bytes
+               0 Dir(s)  128,321,863,680 bytes free</screen>
 </section>
 <section id="_external_scripts">
 <title>External scripts</title>
 <simpara>For example, run an external script such as a pychart and then load the resulting image.</simpara>
+<simpara>&lt;svg baseProfile="full" height="200" version="1.1" width="200" xmlns="http://www.w3.org/2000/svg" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xlink="http://www.w3.org/1999/xlink"&gt;&lt;defs /&gt;&lt;a target="_blank" xlink:href="http://www.w3.org"&gt;&lt;ellipse cx="100" cy="50" fill="red" rx="50" ry="25" /&gt;&lt;/a&gt;&lt;/svg&gt;</simpara>
 <informalfigure>
 <mediaobject>
   <imageobject>
-  <imagedata fileref="../images/test_chartbar.svg" width="50%" scalefit="1"/>
+  <imagedata fileref="../images/test.svg" width="50%" scalefit="1"/>
   </imageobject>
-  <textobject><phrase>bar chart</phrase></textobject>
+  <textobject><phrase>SVG output</phrase></textobject>
 </mediaobject>
 </informalfigure>
 </section>

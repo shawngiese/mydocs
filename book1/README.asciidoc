@@ -1,18 +1,32 @@
 Readme book1
 ============
 
-The files in the folder are used to build a book. There are AsciiDoc files which are the content of the book, some special content such as a CSV file, a python chart, and a book info file in XML (for DocBook). 
+The files in the folder are used to build a book. There are AsciiDoc files which are the content of the book, some special content such as a CSV file, a python chart, and a book info file in XML (for DocBook).
 
-There are 2 book files. Use the book_simple.asciidoc file to build a book using simple content without any special AsiiDoc plugins. 
+There are 2 book files. Use the book_simple.asciidoc file to build a book using simple content without any special AsiiDoc plugins.
 
 Use the book_advanced.asciidoc file to build a book with some advanced features of AsciiDoc such as creating a table from a CSV file, creating a chart from a Pychart file, creating a QR code image and running scripts whose results are included in the book. These special features require additional configuration of AsciiDoc.  See the AsciiDoc website for more information on these features.
 
 Images displayed in the book can be stored in the images folder.
 
-The PDF in the output folder was built with the following commands:
+Generate an XML DocBook file from the AsciiDoc content by running the following command:
+----
+python asciidoc-9.0.4/asciidoc.py -a docinfo1 -o book1/output/book_advanced.xml -b docbook book1/content/book_advanced.asciidoc
+----
+
+Generate a PDF in the output folder by running the following commands:
+----
+c:/asciidoc/xslttools64/xsltproc --xinclude myCustomPDF/myPDFstyles.xsl book1/output/book_advanced.xml > book1/output/book_advanced.fo
+
+c:/asciidoc/fop-2.5/fop -nocs -c myCustomPDF/myFOPconf_win.xconf book1/output/book_advanced.fo book1/output/book_advanced.pdf
+----
+
+There are other options to generate PDF from both the AsciiDoc or XML DockBook content using other tools. For example, to generate HTML you can run one of the following commands:
 
 ----
-asciidoc -a docinfo1 -b docbook -o ./book1/output/book_advanced.xml book1/content/book_advanced.asciidoc
-xsltproc --xinclude myCustomPDF/myPDFstyles.xsl book1/output/book_advanced.xml > book1/output/book_advanced.fo
-./fop-1.1/fop -nocs -c myCustomPDF/myFOPconf_macosx.xconf book1/output/book_advanced.fo book1/output/book_advanced.pdf
+python asciidoc-9.0.4/asciidoc.py -a docinfo1 -a toc2 -o book1/output/book_advanced_html5.html -b html5 book1/content/book_advanced.asciidoc
+----
+
+----
+python asciidoc-9.0.4/asciidoc.py -a docinfo1 -o book1/output/book_advanced_slidy.html -b slidy book1/content/book_advanced.asciidoc
 ----

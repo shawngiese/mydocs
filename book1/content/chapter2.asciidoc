@@ -10,7 +10,7 @@ You can see more things about your visit.
 
 Index examples
 --------------
-ifndef::backend-slidy[] 
+ifndef::backend-slidy[]
 This is an ((inline)) index entry.
 (((Big cats,Lions)))
 (((Big cats,Tigers,Bengal Tiger)))
@@ -23,8 +23,7 @@ Text markers
 
 Replacement text
 (C) copyright, (TM) trademark, (R) registered trademark,
--- em dash, ... ellipsis, -> right arrow, <- left arrow, => right
-double arrow, <= left double arrow.
+-- em dash, ... ellipsis.
 
 [red]Block titles
 
@@ -49,10 +48,10 @@ adolescens.
 .Simple table
 [width="60%",options="header"]
 |=======
-| Header | more 
+| Header | more
 | Cats   | dogs
 | Mice   | scorpions
 |=======
-endif::backend-slidy[] 
+endif::backend-slidy[]
 
 A sample footnote is here. footnote:[An example footnote.]

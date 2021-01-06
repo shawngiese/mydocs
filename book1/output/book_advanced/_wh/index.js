@@ -1,33 +1,33 @@
 var whIndex = [
 {term: "Bengal Tiger",
-anchor: ["ch02s02.html#d0e245",null]},
+anchor: ["ch02s02.html#d0e237",null]},
 {term: "Big cats",
-anchor: ["ch01s01.html#d0e149",null],
+anchor: ["ch01s01.html#d0e141",null],
 entry: [
 {term: "Lions",
-anchor: ["ch02s02.html#d0e221",null]},
+anchor: ["ch02s02.html#d0e213",null]},
+{term: "Tigers",
+entry: [
+{term: "Bengal Tiger",
+anchor: ["ch02s02.html#d0e223",null]},
+{term: "Siberian Tiger",
+anchor: ["ch02s02.html#d0e241",null]}
+]}
+]},
+{term: "inline",
+anchor: ["ch02s02.html#d0e209",null]},
+{term: "Lions",
+anchor: ["ch02s02.html#d0e219",null]},
+{term: "Siberian Tiger",
+anchor: ["ch02s02.html#d0e255",null]},
 {term: "Tigers",
 entry: [
 {term: "Bengal Tiger",
 anchor: ["ch02s02.html#d0e231",null]},
+{term: "Big cats",
+anchor: ["ch01s01.html#d0e135",null]},
 {term: "Siberian Tiger",
 anchor: ["ch02s02.html#d0e249",null]}
-]}
-]},
-{term: "inline",
-anchor: ["ch02s02.html#d0e217",null]},
-{term: "Lions",
-anchor: ["ch02s02.html#d0e227",null]},
-{term: "Siberian Tiger",
-anchor: ["ch02s02.html#d0e263",null]},
-{term: "Tigers",
-entry: [
-{term: "Bengal Tiger",
-anchor: ["ch02s02.html#d0e239",null]},
-{term: "Big cats",
-anchor: ["ch01s01.html#d0e143",null]},
-{term: "Siberian Tiger",
-anchor: ["ch02s02.html#d0e257",null]}
 ]}
 ];
 whWriteIndex();

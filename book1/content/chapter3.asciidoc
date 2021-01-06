@@ -7,23 +7,23 @@ AsciiDoc supports many advanced features such as:
 
 * Creating a graphviz image
 * Adding callouts
-* QR code library
 * Macros to include system commands
 * Loading a CSV file into a table
 * Conditional inclusion macros
-* Embedding images in data-uri for XHTML output 
+* Embedding images in data-uri for XHTML output
 
 
 === Embed images in data-uri ===
-This is built-in to AsciiDoc and enables you to convert your PNG images into base64 encodings that are included in the HTML output file.  This avoids having to distribute the images files.  Read the AsciiDoc documentation for instructions using :data-uri:.
+This is built-in to AsciiDoc and enables you to convert your PNG images into base64 encodings that are included in the HTML output file. When you use this feature, the image data is included in the asciidoc file and avoids having to distribute the images files.
 
+This is especially useful when exporting HTML because the images become embedded in the HTML itself. For more information read the AsciiDoc documentation for instructions using :data-uri:.
 
 === Graphviz charts ===
-This requires that you install Graphviz on the computer that generates output.
+This requires that you install Graphviz on the computer that generates output. If you see the error message "IndexError: list index out of range" then Graphviz cannot be found. In case of such an error check that Graphviz is on your environment "PATH" variable. Depending on how Graphviz was installed, you also may need to run "dot -c" (with installer\'s privileges) to register the plugins.
 
 [graphviz]
 ---------------------------------------------------------------------
-digraph A { 
+digraph A {
   rankdir=LR; Graphviz->AsciiDoc->HTML}
 ---------------------------------------------------------------------
 
@@ -64,8 +64,8 @@ Callouts functionality is built into AsciiDoc. Read the AsciiDoc documentation f
  10/17/97   9:04         <DIR>    tmp
  10/16/97  14:37         <DIR>    WINNT
  10/16/97  14:25             119  AUTOEXEC.BAT   <2>
-  2/13/94   6:21          54,619  COMMAND.COM    
- 10/16/97  14:25             115  CONFIG.SYS     
+  2/13/94   6:21          54,619  COMMAND.COM
+ 10/16/97  14:25             115  CONFIG.SYS
  11/16/97  17:17      61,865,984  pagefile.sys
   2/13/94   6:21           9,349  WINA20.386     <3>
  -----------------------------------------------------
@@ -74,30 +74,21 @@ Callouts functionality is built into AsciiDoc. Read the AsciiDoc documentation f
  <2> System startup code for DOS.
  <3> Some sort of Windows 3.1 hack.
 
-
-=== QR Code ===
-This requires that you install qrencode and the qrcode plugin for AsciiDoc on the computer that generates output.
-
-["qrcode", size=10]
--------------------------
-http://google.com
--------------------------
-
 === Macros ===
-Run script on your system and incorporate that into the documentation.
+Run script on your system and incorporate that into the documentation. Using dir in a Windows environment. Change to a different command to match your OS.
 
 ------------------
-sys::[ls -l *.asciidoc]
+sys::[dir -l *.asciidoc]
 ------------------
 
 === External scripts ===
 For example, run an external script such as a pychart and then load the resulting image.
 
 // Generate chart image file.
-sys2::[python "{indir}/chartbar.py" --format=svg --output="{outdir}/../images/test_chartbar.svg" --scale=1]
+sys2::[python "{indir}/chartbar.py" > ../images/test.svg]
 
 // Display chart image file.
-image::../images/test_chartbar.svg[scaledwidth="50%",alt="bar chart"]
+image::../images/test.svg[scaledwidth="50%",alt="SVG output"]
 
 
 === Importing CSV data ===

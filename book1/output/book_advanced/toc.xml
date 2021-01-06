@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<toc label="Book Title Goes Here" topic="index.html">
+   <topic label="The First Chapter" href="ch01.html">
+      <topic label="Hi there" href="ch01s01.html"/>
+      <topic label="Section 1" href="ch01s02.html">
+         <topic label="Section 2" href="ch01s02s01.html">
+            <topic label="Section 3" href="ch01s02s01s01.html"/>
+         </topic>
+      </topic>
+   </topic>
+   <topic label="The Second Chapter" href="ch02.html">
+      <topic label="Hi there" href="ch02s01.html"/>
+      <topic label="Index examples" href="ch02s02.html"/>
+   </topic>
+   <topic label="Advanced usage" href="ch03.html">
+      <topic label="Advanced" href="ch03s01.html">
+         <topic label="Embed images in data-uri" href="ch03s01s01.html"/>
+         <topic label="Graphviz charts" href="ch03s01s02.html"/>
+         <topic label="Callouts" href="ch03s01s03.html"/>
+         <topic label="Macros" href="ch03s01s04.html"/>
+         <topic label="External scripts" href="ch03s01s05.html"/>
+         <topic label="Importing CSV data" href="ch03s01s06.html"/>
+      </topic>
+   </topic>
+   <topic label="Migration Notes" href="apa.html"/>
+   <topic label="Glossary" href="go01.html"/>
+   <topic label="Index" href="ix01.html"/>
+</toc>

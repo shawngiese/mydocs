@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2011 Pixware SARL. All rights reserved.
+ * Copyright (c) 2017 XMLmind Software. All rights reserved.
  *
  * This file is part of the XMLmind Web Help Compiler project.
  * For conditions of distribution and use, see the accompanying LEGAL.txt file.
@@ -53,10 +53,9 @@
 .toc-toc a {
     text-decoration: none;
 }
-
 /* ======================================================================== */
 /*
- * Copyright (c) 2011-2012 Pixware SARL. All rights reserved.
+ * Copyright (c) 2017 XMLmind Software. All rights reserved.
  *
  * This file is part of the XMLmind Web Help Compiler project.
  * For conditions of distribution and use, see the accompanying LEGAL.txt file.
@@ -72,7 +71,7 @@ body {
 }
 
 .ui-widget {
-    font-size: 85%;
+    font-size: 90%;
 }
 
 /*
@@ -99,6 +98,12 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden;
+
+    /**
+     * Needed to prevent layout flickering during whInitPage/whLayout.
+     */
+    visiblity: hidden;
+    opacity: 0;
 }
 
 /*
@@ -131,9 +136,7 @@ body {
     margin: 0.5em;
 }
 
-#wh-toc-form > *,
-#wh-index-form > *,
-#wh-search-form  > * {
+#wh-search-field {
     vertical-align: middle;
 }
 

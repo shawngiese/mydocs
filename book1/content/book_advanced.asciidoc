@@ -1,8 +1,9 @@
 Book Title Goes Here
 ====================
-Author's Name
-v1.1, 2012-11
+//Author's Name
+//v1.1, 2012-11
 :doctype: book
+:data-uri:
 :icons:
 :max-width: 45em
 

@@ -4,7 +4,7 @@
        xmlns:fo="http://www.w3.org/1999/XSL/Format"
        version="1.0"> 
 
-<xsl:import href="../docbook-xsl-1.77.1/fo/docbook.xsl" />
+<xsl:import href="../docbook-xsl-1.79.1/fo/docbook.xsl" />
 <xsl:import href="myTitlePage.xsl" />
 
 <xsl:param name="paper.type" select="'A4'" />
@@ -14,10 +14,10 @@
 <xsl:param name="default.image.width" select="125" />
 
 
-<xsl:param name="callout.graphics.path" select="'./common/images/callouts/'" />
+<xsl:param name="callout.graphics.path" select="'../../common/images/callouts/'" />
 <xsl:param name="admon.graphics" select="1" />
 <xsl:param name="admon.graphics.extension" select="'.png'" />
-<xsl:param name="admon.graphics.path" select="'./common/images/'" />
+<xsl:param name="admon.graphics.path" select="'../../common/images/'" />
 
 <xsl:param name="body.font.family" select="'Helvetica'" />
 <xsl:param name="title.font.family" select="'Helvetica'" />

@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Bundle-Version: 1.0
+Bundle-Name: REDEFINE THIS: title of this help
+Bundle-SymbolicName: REDEFINE THIS: unique.id.of.this.plugin
+Bundle-Vendor: REDEFINE THIS: author, company or organization
